@@ -1,0 +1,52 @@
+nav {
+  height: 20vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+a {
+  height: 100%;
+}
+
+img {
+  height: 20vh;
+}
+
+.link_wrap {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-decoration: none;
+  font-size: 25px;
+  color: orange;
+}
+
+i {
+  color: orange;
+  padding: 8px 0 2px 8px;
+}
+/*# sourceMappingURL=Header.css.map */

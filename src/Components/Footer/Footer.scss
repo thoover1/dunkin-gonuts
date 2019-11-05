@@ -1,0 +1,11 @@
+.footer-container {
+  height: 20vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgb(255, 104, 2);
+  // background: white;
+  color: white;
+  font-size: 50px;
+}

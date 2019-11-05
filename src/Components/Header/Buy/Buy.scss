@@ -1,0 +1,45 @@
+.buy-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  background: rgb(250, 250, 250);
+}
+
+.box {
+  background: rgb(250, 250, 250);
+  div {
+    h1,
+    p {
+      width: 75vw;
+      padding-left: 100px;
+    }
+  }
+}
+.scrolling-cart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px 20px 0 0;
+  background: rgb(250, 250, 250);
+  .scrolling-cart-column {
+    height: 32vh;
+    width: 12vw;
+    position: fixed;
+    background: white;
+    border: orange;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 5px;
+
+    button {
+      height: 30px;
+      width: 90px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
