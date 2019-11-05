@@ -1,0 +1,58 @@
+.buy-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background: #fafafa;
+}
+
+.box {
+  background: #fafafa;
+}
+
+.box div h1,
+.box div p {
+  width: 75vw;
+  padding-left: 100px;
+}
+
+.scrolling-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px 20px 0 0;
+  background: #fafafa;
+}
+
+.scrolling-cart .scrolling-cart-column {
+  height: 32vh;
+  width: 12vw;
+  position: fixed;
+  background: white;
+  border: orange;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 5px;
+}
+
+.scrolling-cart .scrolling-cart-column button {
+  height: 30px;
+  width: 90px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Buy.css.map */

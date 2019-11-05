@@ -1,0 +1,39 @@
+$primaryColor: orange;
+
+nav {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+a {
+  height: 100%;
+}
+
+img {
+  height: 20vh;
+}
+
+.link_wrap {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  font-size: 25px;
+  color: $primaryColor;
+}
+
+i {
+  color: $primaryColor;
+  padding: 8px 0 2px 8px;
+}

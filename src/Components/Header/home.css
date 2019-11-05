@@ -1,0 +1,157 @@
+.home {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+
+.video {
+  width: 73vw;
+  height: auto;
+  z-index: 1;
+}
+
+.menu-section,
+.coffee-section {
+  position: relative;
+  width: 100%;
+}
+
+.menu-section .video,
+.coffee-section .video {
+  z-index: -1;
+}
+
+.menu-section .menu-btn,
+.menu-section .coffee-btn,
+.coffee-section .menu-btn,
+.coffee-section .coffee-btn {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f7418d;
+  color: white;
+  font-size: 50px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.location-section,
+.mobileApp-section,
+.sandwich-section,
+.giftCard-section,
+.pumpkin-section {
+  position: relative;
+  width: 100%;
+}
+
+.location-section img,
+.mobileApp-section img,
+.sandwich-section img,
+.giftCard-section img,
+.pumpkin-section img {
+  width: 73vw;
+  height: auto;
+}
+
+.location-section .location-btn,
+.location-section .sandwich-btn,
+.location-section .giftCard-btn,
+.mobileApp-section .location-btn,
+.mobileApp-section .sandwich-btn,
+.mobileApp-section .giftCard-btn,
+.sandwich-section .location-btn,
+.sandwich-section .sandwich-btn,
+.sandwich-section .giftCard-btn,
+.giftCard-section .location-btn,
+.giftCard-section .sandwich-btn,
+.giftCard-section .giftCard-btn,
+.pumpkin-section .location-btn,
+.pumpkin-section .sandwich-btn,
+.pumpkin-section .giftCard-btn {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #f7418d;
+  color: white;
+  font-size: 50px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.location-section .mobileApple-btn,
+.mobileApp-section .mobileApple-btn,
+.sandwich-section .mobileApple-btn,
+.giftCard-section .mobileApple-btn,
+.pumpkin-section .mobileApple-btn {
+  height: 0px;
+  width: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 60%;
+  left: 10%;
+}
+
+.location-section .mobileApple-btn img,
+.mobileApp-section .mobileApple-btn img,
+.sandwich-section .mobileApple-btn img,
+.giftCard-section .mobileApple-btn img,
+.pumpkin-section .mobileApple-btn img {
+  height: 80px;
+  width: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 60%;
+  left: 10%;
+  background: transparent;
+}
+
+.location-section .mobileGoogle-btn,
+.mobileApp-section .mobileGoogle-btn,
+.sandwich-section .mobileGoogle-btn,
+.giftCard-section .mobileGoogle-btn,
+.pumpkin-section .mobileGoogle-btn {
+  height: 0px;
+  width: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 40%;
+  left: 10%;
+}
+
+.location-section .mobileGoogle-btn img,
+.mobileApp-section .mobileGoogle-btn img,
+.sandwich-section .mobileGoogle-btn img,
+.giftCard-section .mobileGoogle-btn img,
+.pumpkin-section .mobileGoogle-btn img {
+  height: 105px;
+  width: auto;
+  position: absolute;
+  cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 40%;
+  left: 10%;
+  background: transparent;
+}
+/*# sourceMappingURL=home.css.map */
