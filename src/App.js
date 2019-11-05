@@ -10,6 +10,7 @@ function App() {
       <Header />
       {routes}
       <Footer />
+      'hi'
     </div>
   );
 }
