@@ -3,15 +3,41 @@
   justify-content: space-around;
   align-items: baseline;
   background: rgb(250, 250, 250);
+  padding-top: 50px;
 }
 
 .box {
   background: rgb(250, 250, 250);
-  div {
-    h1,
-    p {
-      width: 75vw;
-      padding-left: 100px;
+  .inventory {
+    height: 100%;
+    width: 80vw;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    border: groove;
+
+    .product {
+      height: 500px;
+      width: 450px;
+      padding: 100px;
+      border: dashed;
+      // border-width: 40px;
+
+      // display: flex;
+      .product-list {
+        display: flex;
+        flex-direction: column;
+        border: groove;
+        img {
+          height: auto;
+          width: 100%;
+          border: groove;
+        }
+      }
     }
   }
 }

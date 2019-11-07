@@ -35,7 +35,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #f7418d;
+  background-color: rgba(247, 65, 141, 0.801);
   color: white;
   font-size: 50px;
   padding: 12px 24px;
@@ -83,7 +83,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #f7418d;
+  background-color: rgba(247, 65, 141, 0.801);
   color: white;
   font-size: 50px;
   padding: 12px 24px;

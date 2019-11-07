@@ -18,7 +18,7 @@ export default class Home extends Component {
         {/* <div className="overlay"></div> */}
         <div className="home-containers">
           <div className="menu-section">
-            <video className="video" autoPlay loop muted>
+            <video className="video" autoPlay loop muted preload>
               <source src={donutVideo} type="video/mp4" />
             </video>
             <Link to="/buy">

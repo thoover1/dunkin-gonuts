@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setUser } from "../reducer";
 import axios from "axios";
@@ -92,7 +93,9 @@ class AuthComponent extends Component {
               }
             />
           </div>
-          <button>{register ? "Register" : "Login"}</button>
+          <Link to="/profile">
+            <button>{register ? "Register" : "Login"}</button>
+          </Link>
         </form>
         {!register && (
           <button

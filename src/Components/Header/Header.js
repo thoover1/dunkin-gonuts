@@ -25,7 +25,7 @@ export default class Header extends React.Component {
             <Link className="links" to="/cart">
               <i className="fas fa-shopping-cart" samesite="none"></i>
             </Link>
-            <Link className="links" to="/profile">
+            <Link className="links" to="/auth/login">
               <i className="fas fa-user-circle" samesite="none"></i>
             </Link>
           </div>
