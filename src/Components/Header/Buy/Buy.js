@@ -36,14 +36,18 @@ export default class Buy extends Component {
   render() {
     const mappedInventory = this.state.inventory;
     if (!mappedInventory.length) {
-      return <img className="spinner" src={spinnerGIF} />;
+      return (
+        <div className="spinner-container">
+          <img className="spinner" src={spinnerGIF} />
+        </div>
+      );
     }
     return (
-      <div>
+      <div className="main-buy-container">
         <div className="subnav">
           <section className="buy-container">
             <div className="inventory-container">
-              <Link to="/buy" className="subnav_links">
+              <Link className="link-styler" to="/buy" className="subnav_links">
                 <h3>All Products</h3>
               </Link>
             </div>

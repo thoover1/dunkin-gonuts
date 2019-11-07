@@ -31,7 +31,11 @@ export default class Drinks extends Component {
   render() {
     const mappedDrinkInventory = this.state.drinkInventory;
     if (!mappedDrinkInventory.length) {
-      return <img className="spinner" src={spinnerGIF} />;
+      return (
+        <div className="spinner-container">
+          <img className="spinner" src={spinnerGIF} />
+        </div>
+      );
     } else {
       return (
         <div className="getAllDrinks">

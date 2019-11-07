@@ -1,7 +1,10 @@
-// .spinner {
-//   height: auto;
-//   width: 20vw;
-// }
+.spinner-container {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .buy-container {
   display: flex;
@@ -9,7 +12,18 @@
   align-items: baseline;
   background: rgb(250, 250, 250);
   padding-top: 50px;
+  padding-bottom: 10px;
   font-size: 30px;
+}
+.main-buy-container {
+  text-decoration: none;
+}
+.link-styler {
+  text-decoration: none;
+}
+
+h3 {
+  color: rgb(255, 0, 179);
 }
 
 .box {
