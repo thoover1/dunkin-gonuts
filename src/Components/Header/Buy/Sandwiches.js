@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Sandwiches.scss";
 
 export default class Sandwiches extends Component {
   constructor(props) {
@@ -37,10 +38,19 @@ export default class Sandwiches extends Component {
                 <ul className="product" id={product.product_id}>
                   <div className="product-list">
                     <img src={product.image} />
-                    <a>{product.product_name}</a>
-                    <a>${product.price}</a>
-                    {/* insert font awesome icons (plus and minus) here as well as responsive counter 
+                    <div className="product-info">
+                      <div className="product-info-a">
+                        <a>{product.product_name}</a>
+                        <a>${product.price}</a>
+                        {/* insert font awesome icons (plus and minus) here as well as responsive counter 
                               that represents how much in cart*/}
+                      </div>
+                      <div className="product-cart-options">
+                        <i class="fas fa-minus-circle"></i>
+                        <input placeholder="amount"></input>
+                        <i class="fas fa-plus-circle"></i>
+                      </div>
+                    </div>
                   </div>
                 </ul>
               </div>

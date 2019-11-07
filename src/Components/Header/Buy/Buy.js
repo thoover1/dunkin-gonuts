@@ -40,27 +40,27 @@ export default class Buy extends Component {
           <section className="buy-container">
             <div className="inventory-container">
               <Link to="/buy" className="subnav_links">
-                <h3>Shop All Products</h3>
+                <h3>All Products</h3>
               </Link>
             </div>
             <div className="donuts-container">
               <Link to="/buy/donuts" className="subnav_links">
-                <h3>Shop Donuts</h3>
+                <h3>Donuts</h3>
               </Link>
             </div>
             <div className="drinks-container">
               <Link to="/buy/drinks" className="subnav_links">
-                <h3>Shop Drinks</h3>
+                <h3>Drinks</h3>
               </Link>
             </div>
             <div className="sandwiches-container">
               <Link to="/buy/sandwiches" className="subnav_links">
-                <h3>Shop Sandwiches</h3>
+                <h3>Sandwiches</h3>
               </Link>
             </div>
             <div className="cards-container">
               <Link to="/buy/cards" className="subnav_links">
-                <h3>Shop DD Cards</h3>
+                <h3>DD Cards</h3>
               </Link>
             </div>
           </section>
@@ -95,10 +95,17 @@ export default class Buy extends Component {
                             <div className="product-list">
                               <img src={product.image} />
                               <div className="product-info">
-                                <a>{product.product_name}</a>
-                                <a>${product.price}</a>
-                                {/* insert font awesome icons (plus and minus) here as well as responsive counter 
+                                <div className="product-info-a">
+                                  <a>{product.product_name}</a>
+                                  <a>${product.price}</a>
+                                  {/* insert font awesome icons (plus and minus) here as well as responsive counter 
                               that represents how much in cart*/}
+                                </div>
+                                <div className="product-cart-options">
+                                  <i class="fas fa-minus-circle"></i>
+                                  <input placeholder="amount"></input>
+                                  <i class="fas fa-plus-circle"></i>
+                                </div>
                               </div>
                             </div>
                           </ul>

@@ -1,22 +1,4 @@
-.buy-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  background: #fafafa;
-  padding-top: 50px;
-  font-size: 30px;
-}
-
-.box {
-  background: #fafafa;
-}
-
-.box .inventory {
+.inventory {
   height: 100%;
   width: 80vw;
   padding-left: 100px;
@@ -39,13 +21,13 @@
   font-size: 20px;
 }
 
-.box .inventory .product {
+.inventory .product {
   height: 500px;
   width: 450px;
   padding: 100px;
 }
 
-.box .inventory .product .product-list {
+.inventory .product .product-list {
   height: 120%;
   width: 100%;
   display: -webkit-box;
@@ -62,7 +44,7 @@
           justify-content: space-between;
 }
 
-.box .inventory .product .product-list img {
+.inventory .product .product-list img {
   height: auto;
   width: 100%;
   display: -webkit-box;
@@ -76,7 +58,7 @@
           align-items: center;
 }
 
-.box .inventory .product .product-list .product-info {
+.inventory .product .product-list .product-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +73,7 @@
           align-items: flex-end;
 }
 
-.box .inventory .product .product-list .product-info .product-info-a {
+.inventory .product .product-list .product-info .product-info-a {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,7 +83,7 @@
           justify-content: space-between;
 }
 
-.box .inventory .product .product-list .product-info .product-cart-options {
+.inventory .product .product-list .product-info .product-cart-options {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,11 +96,11 @@
   padding-top: 20px;
 }
 
-.box .inventory .product .product-list .product-info .product-cart-options i {
+.inventory .product .product-list .product-info .product-cart-options i {
   color: #ff00b3;
 }
 
-.box .inventory .product .product-list .product-info .product-cart-options input {
+.inventory .product .product-list .product-info .product-cart-options input {
   width: 40%;
   color: #ff7b00;
   text-align: center;
@@ -159,4 +141,4 @@
   font-size: 16px;
   cursor: pointer;
 }
-/*# sourceMappingURL=Buy.css.map */
+/*# sourceMappingURL=Donuts.css.map */

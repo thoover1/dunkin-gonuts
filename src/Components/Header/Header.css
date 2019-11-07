@@ -45,8 +45,12 @@ img {
   color: orange;
 }
 
+.fas.fa-chevron-down.fa-xs {
+  color: orange;
+  padding: 2px 0 2px 8px;
+}
+
 i {
   color: orange;
-  padding: 8px 0 2px 8px;
 }
 /*# sourceMappingURL=Header.css.map */
