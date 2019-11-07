@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import axios from "axios";
+import "./Cards.scss";
 
 export default class Cards extends Component {
   // constructor() {
@@ -24,8 +25,12 @@ export default class Cards extends Component {
 
   render() {
     return (
-      <div>
-        <h5>DD Cards</h5>
+      <div className="cards-container">
+        <h5>
+          DD Cardshadhflahsdf uhasldfhlusfhvluahfvaldsdfhlaufhlu adfhl uhasv
+          lfuhal dfho uasdfu hasdufhafholiaof ua sdgfu galufha vdfh oalss
+          dfhoadfh adfhpasofadfn
+        </h5>
       </div>
     );
   }

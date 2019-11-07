@@ -6,6 +6,7 @@ import Sandwiches from "./Sandwiches";
 import Cards from "./Cards";
 import "./Buy.scss";
 import axios from "axios";
+import spinnerGIF from "../../../assets/spinner.gif";
 
 export default class Buy extends Component {
   constructor() {
@@ -34,6 +35,9 @@ export default class Buy extends Component {
 
   render() {
     const mappedInventory = this.state.inventory;
+    if (!mappedInventory.length) {
+      return <img className="spinner" src={spinnerGIF} />;
+    }
     return (
       <div>
         <div className="subnav">

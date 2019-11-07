@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Donuts.scss";
+import spinnerGIF from "../../../assets/spinner.gif";
 
 export default class Donuts extends Component {
   constructor(props) {
@@ -45,35 +46,39 @@ export default class Donuts extends Component {
 
   render() {
     const mappedDonutInventory = this.state.donutInventory;
-    return (
-      <div className="getAllDonuts">
-        <div className="inventory">
-          {mappedDonutInventory.map(product => {
-            return (
-              <div key={product.product_id}>
-                <ul className="product" id={product.product_id}>
-                  <div className="product-list">
-                    <img src={product.image} />
-                    <div className="product-info">
-                      <div className="product-info-a">
-                        <a>{product.product_name}</a>
-                        <a>${product.price}</a>
-                        {/* insert font awesome icons (plus and minus) here as well as responsive counter 
+    if (!mappedDonutInventory.length) {
+      return <img className="spinner" src={spinnerGIF} />;
+    } else {
+      return (
+        <div className="getAllDonuts">
+          <div className="inventory">
+            {mappedDonutInventory.map(product => {
+              return (
+                <div key={product.product_id}>
+                  <ul className="product" id={product.product_id}>
+                    <div className="product-list">
+                      <img src={product.image} />
+                      <div className="product-info">
+                        <div className="product-info-a">
+                          <a>{product.product_name}</a>
+                          <a>${product.price}</a>
+                          {/* insert font awesome icons (plus and minus) here as well as responsive counter 
                               that represents how much in cart*/}
-                      </div>
-                      <div className="product-cart-options">
-                        <i class="fas fa-minus-circle"></i>
-                        <input placeholder="amount"></input>
-                        <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div className="product-cart-options">
+                          <i class="fas fa-minus-circle"></i>
+                          <input placeholder="amount"></input>
+                          <i class="fas fa-plus-circle"></i>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </ul>
-              </div>
-            );
-          })}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }

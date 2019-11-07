@@ -1,0 +1,2 @@
+access_key_id = AKIA55ADZMCKXPVQQJXC
+secret_access_key_id = M1Vg+tTvouIApdzUYU6phVdlmhp/kbgLJmSjxODy
