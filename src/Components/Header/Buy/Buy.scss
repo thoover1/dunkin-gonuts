@@ -4,6 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
+  .spinner {
+    width: 30%;
+    height: auto;
+  }
 }
 
 .buy-container {
@@ -17,13 +22,12 @@
 }
 .main-buy-container {
   text-decoration: none;
-}
-.link-styler {
-  text-decoration: none;
-}
-
-h3 {
-  color: rgb(255, 0, 179);
+  :link {
+    text-decoration: none;
+  }
+  h3 {
+    color: rgb(255, 0, 179);
+  }
 }
 
 .box {

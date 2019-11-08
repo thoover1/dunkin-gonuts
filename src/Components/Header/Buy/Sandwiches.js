@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Sandwiches.scss";
-import spinnerGIF from "../../../assets/spinner.gif";
+// import spinnerGIF from "../../../assets/spinner.gif";
+import loaderGIF from "../../../assets/loader.gif";
 
 export default class Sandwiches extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class Sandwiches extends Component {
     if (!mappedSandwichInventory.length) {
       return (
         <div className="spinner-container">
-          <img className="spinner" src={spinnerGIF} />
+          <img className="spinner" src={loaderGIF} />
         </div>
       );
     } else {

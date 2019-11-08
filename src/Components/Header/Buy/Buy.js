@@ -6,7 +6,8 @@ import Sandwiches from "./Sandwiches";
 import Cards from "./Cards";
 import "./Buy.scss";
 import axios from "axios";
-import spinnerGIF from "../../../assets/spinner.gif";
+// import spinnerGIF from "../../../assets/spinner.gif";
+import loaderGIF from "../../../assets/loader.gif";
 
 export default class Buy extends Component {
   constructor() {
@@ -38,7 +39,7 @@ export default class Buy extends Component {
     if (!mappedInventory.length) {
       return (
         <div className="spinner-container">
-          <img className="spinner" src={spinnerGIF} />
+          <img className="spinner" src={loaderGIF} />
         </div>
       );
     }

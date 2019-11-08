@@ -10,6 +10,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: white;
+}
+
+.spinner-container .spinner {
+  width: 30%;
+  height: auto;
 }
 
 .buy-container {
@@ -31,11 +37,11 @@
   text-decoration: none;
 }
 
-.link-styler {
+.main-buy-container :link {
   text-decoration: none;
 }
 
-h3 {
+.main-buy-container h3 {
   color: #ff00b3;
 }
 

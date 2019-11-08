@@ -63,11 +63,11 @@ CREATE TABLE purchase_history
     product_id INTEGER REFERENCES inventory(product_id)
 );
 
--- seems generic... feels like I should insert this into a new table(i.e. add_to_cart.sql)???
 INSERT INTO purchase_history
     (user_id, product_id)
 VALUES
-    (1, 1);
+    -- this may or may not be correct....
+    ($1, $2);
 
 
 -- user purchase history on one table for chartjs
@@ -80,6 +80,28 @@ FROM users
     ON (users.user_id = purchase_history.user_id)
     JOIN inventory
     ON (purchase_history.product_id = inventory.product_id);
+
+
+-- cart.sql
+CREATE TABLE cart
+(
+    cart_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    product_id INTEGER REFERENCES inventory(product_id)
+)
+
+INSERT INTO cart
+    (user_id, product_id)
+VALUES
+    ($1, $2)
+
+SELECT users.user_id, product_name, inventory.product_id, price, image
+FROM users
+    JOIN cart
+    ON (users.user_id = cart.cart_id)
+    JOIN inventory
+    ON (cart.cart_id = inventory.product_id)
+
 
 
 --############### ICEBOX ###############--
