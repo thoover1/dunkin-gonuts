@@ -4,6 +4,7 @@
   top: 15vh;
   right: 0;
   position: fixed;
+  overflow: hidden;
   z-index: 6;
   background: white;
   display: -webkit-box;
@@ -18,6 +19,8 @@
           align-items: flex-end;
   font-size: 30px;
   opacity: 97%;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .sideDrawer-link-wrap .sideDrawer-links {

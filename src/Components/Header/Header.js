@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header_gif from "../../assets/header.gif";
 import "./Header.css";
-// import SideDrawer from "../SideDrawer";
 
 export default class Header extends React.Component {
   constructor(props) {

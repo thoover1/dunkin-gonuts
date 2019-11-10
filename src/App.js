@@ -27,7 +27,7 @@ export default class App extends React.Component {
     let sideDrawer;
 
     if (this.state.toggle) {
-      sideDrawer = <SideDrawer />;
+      sideDrawer = <SideDrawer toggler={this.toggler} />;
     }
     return (
       <div className="App">

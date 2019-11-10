@@ -4,6 +4,7 @@
   top: 15vh;
   right: 0;
   position: fixed;
+  overflow: hidden;
   z-index: 6;
   background: white;
   display: flex;
@@ -11,6 +12,7 @@
   align-items: flex-end;
   font-size: 30px;
   opacity: 97%;
+  transition: 2s;
   .sideDrawer-links {
     text-decoration: none;
     padding-right: 40px;

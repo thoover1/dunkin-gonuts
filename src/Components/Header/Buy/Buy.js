@@ -39,7 +39,7 @@ export default class Buy extends Component {
     if (!mappedInventory.length) {
       return (
         <div className="spinner-container">
-          <img className="spinner" src={loaderGIF} />
+          <img className="spinner" src={loaderGIF} alt="" />
         </div>
       );
     }
@@ -103,13 +103,11 @@ export default class Buy extends Component {
                         <div key={product.product_id}>
                           <ul className="product" id={product.product_id}>
                             <div className="product-list">
-                              <img src={product.image} />
+                              <img src={product.image} alt="" />
                               <div className="product-info">
                                 <div className="product-info-a">
                                   <a>{product.product_name}</a>
                                   <a>${product.price}</a>
-                                  {/* insert font awesome icons (plus and minus) here as well as responsive counter 
-                              that represents how much in cart*/}
                                 </div>
                                 <div className="product-cart-options">
                                   <i class="fas fa-minus-circle"></i>

@@ -154,4 +154,122 @@
   left: 10%;
   background: transparent;
 }
+
+@media (max-width: 1350px) {
+  .mobileApp-section .mobileApple-btn img {
+    height: 60px;
+    -webkit-transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
+  }
+  .mobileApp-section .mobileGoogle-btn img {
+    height: 80px;
+    -webkit-transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
+  }
+}
+
+@media (max-width: 800px) {
+  .mobileApp-section .mobileApple-btn img {
+    height: 45px;
+    -webkit-transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
+  }
+  .mobileApp-section .mobileGoogle-btn img {
+    height: 60px;
+    -webkit-transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
+  }
+}
+
+@media (max-width: 750px) {
+  .menu-section .menu-btn,
+  .menu-section .coffee-btn,
+  .coffee-section .menu-btn,
+  .coffee-section .coffee-btn {
+    font-size: 34px;
+    padding: 8px 18px;
+  }
+  .location-section .location-btn,
+  .location-section .sandwich-btn,
+  .location-section .giftCard-btn,
+  .sandwich-section .location-btn,
+  .sandwich-section .sandwich-btn,
+  .sandwich-section .giftCard-btn,
+  .giftCard-section .location-btn,
+  .giftCard-section .sandwich-btn,
+  .giftCard-section .giftCard-btn {
+    font-size: 34px;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobileApp-section .mobileApple-btn img {
+    height: 30px;
+    -webkit-transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
+  }
+  .mobileApp-section .mobileGoogle-btn img {
+    height: 40px;
+    -webkit-transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-section .menu-btn,
+  .menu-section .coffee-btn,
+  .coffee-section .menu-btn,
+  .coffee-section .coffee-btn {
+    font-size: 23px;
+    padding: 3px 12px;
+  }
+  .location-section .location-btn,
+  .location-section .sandwich-btn,
+  .location-section .giftCard-btn,
+  .sandwich-section .location-btn,
+  .sandwich-section .sandwich-btn,
+  .sandwich-section .giftCard-btn,
+  .giftCard-section .location-btn,
+  .giftCard-section .sandwich-btn,
+  .giftCard-section .giftCard-btn {
+    font-size: 23px;
+    padding: 3px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobileApp-section .mobileApple-btn img {
+    height: 20px;
+    -webkit-transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
+  }
+  .mobileApp-section .mobileGoogle-btn img {
+    height: 26px;
+    -webkit-transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
+  }
+}
+
+@media (max-width: 350px) {
+  .menu-section .menu-btn,
+  .menu-section .coffee-btn,
+  .coffee-section .menu-btn,
+  .coffee-section .coffee-btn {
+    font-size: 16px;
+    padding: 2px 8px;
+  }
+  .location-section .location-btn,
+  .location-section .sandwich-btn,
+  .location-section .giftCard-btn,
+  .sandwich-section .location-btn,
+  .sandwich-section .sandwich-btn,
+  .sandwich-section .giftCard-btn,
+  .giftCard-section .location-btn,
+  .giftCard-section .sandwich-btn,
+  .giftCard-section .giftCard-btn {
+    font-size: 16px;
+    padding: 2px 8px;
+  }
+}
 /*# sourceMappingURL=home.css.map */

@@ -42,7 +42,7 @@ export default class Donuts extends Component {
     if (!mappedDonutInventory.length) {
       return (
         <div className="spinner-container">
-          <img className="spinner" src={loaderGIF} />
+          <img className="spinner" src={loaderGIF} alt="" />
         </div>
       );
     }
@@ -54,7 +54,7 @@ export default class Donuts extends Component {
               <div key={product.product_id}>
                 <ul className="product" id={product.product_id}>
                   <div className="product-list">
-                    <img src={product.image} />
+                    <img src={product.image} alt="" />
                     <div className="product-info">
                       <div className="product-info-a">
                         <a>{product.product_name}</a>

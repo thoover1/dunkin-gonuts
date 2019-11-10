@@ -50,33 +50,21 @@ i {
 @media (max-width: 1000px) {
   .header-container {
     height: 15vh;
-  }
-  .nav {
+    // position: fixed;
+    z-index: 3;
+    background: white;
   }
   .header-gif {
     height: 15vh;
   }
-  .link-wrap {
-  }
-  .show {
-    // background: rgba(255, 166, 0, 0.671);
-    // height: 500px;
-    // width: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // z-index: 2;
-    // // position: fixed;
-  }
   .links {
     display: none;
-    // width: 100vw;
-    // color: black;
   }
   .hamburger-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: transparent;
     font-size: 36px;
     border: none;
     height: 50px;
@@ -88,5 +76,36 @@ i {
   }
   .hamburger-button:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .header-container {
+    height: 10vh;
+  }
+  .header-gif {
+    height: 10vh;
+  }
+  .hamburger-button {
+    font-size: 26px;
+    height: 25px;
+    width: 25px;
+    margin-right: 50px;
+    margin-top: -85px;
+  }
+}
+@media (max-width: 350px) {
+  .header-container {
+    height: 8vh;
+  }
+  .header-gif {
+    height: 8vh;
+  }
+  .hamburger-button {
+    font-size: 26px;
+    height: 25px;
+    width: 25px;
+    margin-right: 30px;
+    margin-top: -100px;
   }
 }

@@ -103,10 +103,6 @@
   }
 }
 
-// .staticMap {
-//   width: 90vw;
-// }
-
 // .overlay {
 //   width: 100%;
 //   position: absolute;
@@ -118,3 +114,136 @@
 //   margin-top: 0;
 //   padding: 0;
 // }
+
+@media (max-width: 1350px) {
+  .mobileApp-section {
+    .mobileApple-btn {
+      img {
+        height: 60px;
+        transform: translate(-30%, -50%);
+      }
+    }
+    .mobileGoogle-btn {
+      img {
+        height: 80px;
+        transform: translate(-32%, -50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .mobileApp-section {
+    .mobileApple-btn {
+      img {
+        height: 45px;
+        transform: translate(-30%, -50%);
+      }
+    }
+    .mobileGoogle-btn {
+      img {
+        height: 60px;
+        transform: translate(-32%, -50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .menu-section,
+  .coffee-section {
+    .menu-btn,
+    .coffee-btn {
+      font-size: 34px;
+      padding: 8px 18px;
+    }
+  }
+
+  .location-section,
+  .sandwich-section,
+  .giftCard-section {
+    .location-btn,
+    .sandwich-btn,
+    .giftCard-btn {
+      font-size: 34px;
+      padding: 8px 18px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .mobileApp-section {
+    .mobileApple-btn {
+      img {
+        height: 30px;
+        transform: translate(-30%, -50%);
+      }
+    }
+    .mobileGoogle-btn {
+      img {
+        height: 40px;
+        transform: translate(-32%, -50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-section,
+  .coffee-section {
+    .menu-btn,
+    .coffee-btn {
+      font-size: 23px;
+      padding: 3px 12px;
+    }
+  }
+
+  .location-section,
+  .sandwich-section,
+  .giftCard-section {
+    .location-btn,
+    .sandwich-btn,
+    .giftCard-btn {
+      font-size: 23px;
+      padding: 3px 12px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .mobileApp-section {
+    .mobileApple-btn {
+      img {
+        height: 20px;
+        transform: translate(-30%, -50%);
+      }
+    }
+    .mobileGoogle-btn {
+      img {
+        height: 26px;
+        transform: translate(-32%, -50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .menu-section,
+  .coffee-section {
+    .menu-btn,
+    .coffee-btn {
+      font-size: 16px;
+      padding: 2px 8px;
+    }
+  }
+
+  .location-section,
+  .sandwich-section,
+  .giftCard-section {
+    .location-btn,
+    .sandwich-btn,
+    .giftCard-btn {
+      font-size: 16px;
+      padding: 2px 8px;
+    }
+  }
+}
