@@ -86,21 +86,21 @@ FROM users
 CREATE TABLE cart
 (
     cart_id SERIAL PRIMARY KEY,
+    quantity INTEGER,
     user_id INTEGER REFERENCES users(user_id),
     product_id INTEGER REFERENCES inventory(product_id)
 )
 
 INSERT INTO cart
-    (user_id, product_id)
+    (user_id, product_id, quantity)
 VALUES
-    ($1, $2)
+    ($1, $2, $3)
 
-SELECT users.user_id, product_name, inventory.product_id, price, image
-FROM users
+SELECT product_name, product_id, price, image
+FROM inventory
     JOIN cart
-    ON (users.user_id = cart.cart_id)
-    JOIN inventory
-    ON (cart.cart_id = inventory.product_id)
+    ON (inventory.product_id = cart.product_id)
+WHERE cart.user_id = $1;
 
 
 

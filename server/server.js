@@ -5,7 +5,7 @@ const massive = require("massive");
 const ic = require("./controllers/inventoryCtrl");
 const uc = require("./controllers/userCtrl");
 // require once Ctrl file is completed
-// const cc = require("./controllers/cartCtrl");
+const cc = require("./controllers/cartCtrl");
 // const phc = require("./controllers/Ctrl");
 
 // const auth = require('./middleware/authMiddleware')
@@ -55,12 +55,15 @@ app.delete("/auth/logout", uc.logout);
 // endpoint to display specific inventory lists
 app.get("/api/inventory", ic.getInventory);
 app.get("/api/inventory/donuts", ic.getDonutInventory);
+app.put("/api/inventory/donuts", cc.inputAddToCart);
+app.post("/api/inventory/donuts/:product_id", cc.buttonEditCart);
 app.get("/api/inventory/drinks", ic.getDrinkInventory);
 app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 // NOT INSERTED INTO inventory table yet
 // app.get("/api/inventory/cards", pc.getCardInventory);
 //
-//
+// endpoint to display cart
+app.get("/api/cart", cc.getEntireCart);
 //
 // curious if I'll need PUT requests?
 // is the PUT what is need to update front end from SQL altering table?

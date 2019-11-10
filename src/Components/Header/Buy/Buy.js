@@ -92,6 +92,7 @@ export default class Buy extends Component {
             <Route path="/buy/drinks" component={Drinks} />
             <Route path="/buy/sandwiches" component={Sandwiches} />
             <Route path="/buy/cards" component={Cards} />
+
             <Route
               path="/buy"
               render={() => (

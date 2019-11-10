@@ -10,7 +10,7 @@
 }
 
 .video {
-  width: 73vw;
+  width: 100vw;
   height: auto;
   z-index: 1;
 }
@@ -59,7 +59,7 @@
 .sandwich-section img,
 .giftCard-section img,
 .pumpkin-section img {
-  width: 73vw;
+  width: 100vw;
   height: auto;
 }
 

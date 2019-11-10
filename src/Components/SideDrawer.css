@@ -1,0 +1,32 @@
+.sideDrawer-link-wrap {
+  height: 85vh;
+  width: 30vw;
+  top: 15vh;
+  right: 0;
+  position: fixed;
+  z-index: 6;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 30px;
+  opacity: 97%;
+}
+
+.sideDrawer-link-wrap .sideDrawer-links {
+  text-decoration: none;
+  padding-right: 40px;
+  color: orange;
+}
+
+.sideDrawer-link-wrap .sideDrawer-links:hover {
+  color: rgba(247, 65, 141, 0.966);
+}
+/*# sourceMappingURL=SideDrawer.css.map */

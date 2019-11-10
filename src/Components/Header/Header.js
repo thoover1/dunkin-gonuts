@@ -2,16 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header_gif from "../../assets/header.gif";
 import "./Header.css";
+// import SideDrawer from "../SideDrawer";
 
 export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className="header-container">
         <nav className="nav">
           <Link to="/">
-            <img src={Header_gif} alt="" />
+            <img className="header-gif" src={Header_gif} alt="" />
           </Link>
-          <div className="link_wrap">
+          <div className="link-wrap">
             <Link className="links" to="/">
               HOME
             </Link>
@@ -29,6 +33,9 @@ export default class Header extends React.Component {
               <i className="fas fa-user-circle" samesite="none"></i>
             </Link>
           </div>
+          <button className="hamburger-button" onClick={this.props.toggler}>
+            <i class="fas fa-bars"></i>
+          </button>
         </nav>
       </div>
     );

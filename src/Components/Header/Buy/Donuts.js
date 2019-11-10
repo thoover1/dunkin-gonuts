@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Donuts.scss";
-// import spinnerGIF from "../../../assets/spinner.gif";
 import loaderGIF from "../../../assets/loader.gif";
 
 export default class Donuts extends Component {
@@ -12,23 +11,16 @@ export default class Donuts extends Component {
       donutInventory: []
     };
     this.getDonutInventory = this.getDonutInventory.bind(this);
-
-    // this.addProductToCart = this.addProductToCart.bind(this);
-    // this.deleteProdocutFromCart = this.deleteProdocutFromCart.bind(this);
+    this.addProductToCart = this.addProductToCart.bind(this);
   }
 
   // // not sure if this is correct....
-  // addProductToCart(id) {
-  //   axios.put(`/api/inventory/${id}`).then(response => {
-  //     this.setState({ product: response.data})
-  //   })
-  // }
-  // // this is probably correct
-  // deleteProductFromCart(id) {
-  //   axios.put(`/api/inventory/${id}`).then(response => {
-  //     this.setState({ product: response.data})
-  //   })
-  // }
+  addProductToCart(product_id) {
+    axios.post(`/api/inventory/donuts/${product_id}`).then(response => {
+      this.setState({ ...this.props.cart, product_id });
+    });
+    console.log(`onclick worked on product id = ${product_id}`);
+  }
 
   componentDidMount() {
     this.getDonutInventory();
@@ -67,13 +59,14 @@ export default class Donuts extends Component {
                       <div className="product-info-a">
                         <a>{product.product_name}</a>
                         <a>${product.price}</a>
-                        {/* insert font awesome icons (plus and minus) here as well as responsive counter 
-                              that represents how much in cart*/}
                       </div>
                       <div className="product-cart-options">
                         <i class="fas fa-minus-circle"></i>
                         <input placeholder="amount"></input>
-                        <i class="fas fa-plus-circle"></i>
+                        <i
+                          onClick={this.addProductToCart}
+                          class="fas fa-plus-circle"
+                        ></i>
                       </div>
                     </div>
                   </div>

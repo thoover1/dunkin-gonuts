@@ -1,0 +1,22 @@
+.sideDrawer-link-wrap {
+  height: 85vh;
+  width: 30vw;
+  top: 15vh;
+  right: 0;
+  position: fixed;
+  z-index: 6;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 30px;
+  opacity: 97%;
+  .sideDrawer-links {
+    text-decoration: none;
+    padding-right: 40px;
+    color: orange;
+  }
+  .sideDrawer-links:hover {
+    color: rgba(247, 65, 141, 0.966);
+  }
+}
