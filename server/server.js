@@ -43,10 +43,10 @@ app.get("/auth/userSession", uc.userSession);
 app.delete("/auth/logout", uc.logout);
 
 // only allows users with profile to use app
-// app.use((req, res, next) => {
-//   if (req.session.user) return next();
-//   else res.sendStatus(401);
-// });
+app.use((req, res, next) => {
+  if (req.session.user) return next();
+  else res.sendStatus(401);
+});
 
 // used for products
 // app.get("/api/purchase_history", pc.getPurchaseHistory);

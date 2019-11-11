@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=location.css.map */
+.map-container {
+  height: 80vh;
+  width: 100vw;
+}
+
+.map-container h1 {
+  font-size: 28px;
+  color: #ff00b3;
+}
+
+@media (max-width: 400px) {
+  .map-container h1 {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=location.css.map */

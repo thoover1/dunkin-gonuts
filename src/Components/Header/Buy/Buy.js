@@ -40,6 +40,8 @@ export default class Buy extends Component {
       return (
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
+          <br />
+          Do-nut Worry! Fetching data as we speak! Sit Tight!
         </div>
       );
     }
@@ -106,8 +108,8 @@ export default class Buy extends Component {
                               <img src={product.image} alt="" />
                               <div className="product-info">
                                 <div className="product-info-a">
-                                  <a>{product.product_name}</a>
-                                  <a>${product.price}</a>
+                                  <div>{product.product_name}</div>
+                                  <div>${product.price}</div>
                                 </div>
                                 <div className="product-cart-options">
                                   <i class="fas fa-minus-circle"></i>

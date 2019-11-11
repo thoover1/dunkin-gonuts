@@ -11,15 +11,16 @@ CREATE TABLE users
     user_id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
-    email TEXT UNIQUE NOT NULL
+    email TEXT UNIQUE NOT NULL,
+    phone_number INTEGER NOT NULL
 );
 
 INSERT INTO users
     (
-    username, password, email
+    username, password, email, phone_number
     )
 VALUES
-    ('thoover1', '$2b$12$HEjva0QfF7bWFSFIVoJZA.8dOqiNoFCeTZ.AHexC2MmeJawoukA2.', 'thoover1@uab.edu');
+    ('thoover1', '$2b$12$HEjva0QfF7bWFSFIVoJZA.8dOqiNoFCeTZ.AHexC2MmeJawoukA2.', 'thoover1@uab.edu', 2108676362);
 
 CREATE TABLE inventory
 (
@@ -96,7 +97,7 @@ INSERT INTO cart
 VALUES
     ($1, $2, $3)
 
-SELECT product_name, product_id, price, image
+SELECT product_name, inventory.product_id, price, image
 FROM inventory
     JOIN cart
     ON (inventory.product_id = cart.product_id)

@@ -7,7 +7,8 @@ const initialState = {
   password: "",
   firstName: "",
   lastName: "",
-  email: ""
+  email: "",
+  phone_number: ""
 };
 
 export const SET_USER = "SET_USER";
@@ -16,6 +17,7 @@ export const PASSWORD = "PASSWORD";
 export const FIRSTNAME = "FIRSTNAME";
 export const LASTNAME = "LASTNAME";
 export const EMAIL = "EMAIL";
+export const PHONE_NUMBER = "PHONE_NUMBER";
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -31,6 +33,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, lastName: action.payload };
     case EMAIL:
       return { ...state, email: action.payload };
+    case PHONE_NUMBER:
+      return { ...state, phoneNumber: action.payload };
     default:
       return state;
   }
@@ -70,5 +74,11 @@ export function enterEmail(email) {
   return {
     type: EMAIL,
     payload: email
+  };
+}
+export function enterPhoneNumber(phone_number) {
+  return {
+    type: PHONE_NUMBER,
+    payload: phone_number
   };
 }

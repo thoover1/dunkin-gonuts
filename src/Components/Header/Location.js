@@ -40,6 +40,17 @@ export default class Home extends Component {
   };
 
   render() {
-    return <MapComponent currentLocation={this.state.currentLatLng} />;
+    return (
+      <div className="map-container">
+        <br />
+        <br />
+        <h1>LOCATIONS NEAR YOU</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <MapComponent currentLocation={this.state.currentLatLng} />
+      </div>
+    );
   }
 }

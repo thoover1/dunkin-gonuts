@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setUser } from "../reducer";
 import axios from "axios";
@@ -13,6 +13,7 @@ class AuthComponent extends Component {
       email: "",
       password: "",
       username: "",
+      phone_number: "",
       register: true
     };
     this.register = this.register.bind(this);
@@ -20,11 +21,12 @@ class AuthComponent extends Component {
   }
 
   async register() {
-    const { email, password, username } = this.state;
+    const { email, password, username, phone_number } = this.state;
     const registeredUser = await axios.post("/auth/register", {
       email,
       username,
-      password
+      password,
+      phone_number
     });
     this.props.setUser(registeredUser.data);
   }
@@ -39,7 +41,7 @@ class AuthComponent extends Component {
   }
 
   render() {
-    const { email, username, password, register } = this.state;
+    const { email, username, password, phone_number, register } = this.state;
     return this.props.user ? (
       <Redirect to="/profile" />
     ) : (
@@ -93,9 +95,21 @@ class AuthComponent extends Component {
               }
             />
           </div>
-          <Link to="/profile">
-            <button>{register ? "Register" : "Login"}</button>
-          </Link>
+          {register && (
+            <div className="input-container">
+              <label>Phone Number</label>
+              <input
+                type="phone-number"
+                value={phone_number}
+                onChange={e =>
+                  this.setState({
+                    phone_number: e.target.value
+                  })
+                }
+              />
+            </div>
+          )}
+          <button>{register ? "Register" : "Login"}</button>
         </form>
         {!register && (
           <button
@@ -132,7 +146,9 @@ const mapDispatchToProps = {
   setUser
 };
 
-export default connect(
+const enhancedComponent = connect(
   mapReduxStateToProps,
   mapDispatchToProps
-)(AuthComponent);
+);
+
+export default enhancedComponent(AuthComponent);
