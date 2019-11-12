@@ -4,8 +4,8 @@ const session = require("express-session");
 const massive = require("massive");
 const ic = require("./controllers/inventoryCtrl");
 const uc = require("./controllers/userCtrl");
-// require once Ctrl file is completed
 const cc = require("./controllers/cartCtrl");
+// require once Ctrl file is completed
 // const phc = require("./controllers/purchaseHistoryCtrl");
 
 // const auth = require('./middleware/authMiddleware')
@@ -53,10 +53,6 @@ app.delete("/auth/logout", uc.logout);
 // endpoint to display specific inventory lists
 app.get("/api/inventory", ic.getInventory);
 app.get("/api/inventory/donuts", ic.getDonutInventory);
-
-// app.post("/api/inventory/donuts", cc.inputAddToCart);
-// app.post("/api/inventory/donuts/:product_id", cc.buttonEditCart);
-
 app.get("/api/inventory/drinks", ic.getDrinkInventory);
 app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 // NOT INSERTED INTO inventory table yet
@@ -64,17 +60,11 @@ app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 //
 // endpoint to display cart
 app.get("/api/cart", cc.getEntireCart);
-app.post("/api/button_add_to_cart", cc.buttonAddToCart);
-//
-// curious if I'll need PUT requests?
-// is the PUT what is need to update front end from SQL altering table?
-// if creating a user database to store user data, then yes - probably will do this
-// examples - firstName, lastName, username, email, profilePicture, previousOrder?, purchaseHistory?
 
-// GET and DELETE requests:
-// will show items in respected tabs once clicked on and displayed in the cart
-// (or do i need a seperate get request for the cart...
-// {i.e. a new link [e.g. '/api/cartItems/xxx']}) ?????????????
+// endpoints that add functionality to cart/Buy components
+app.post("/api/button_add_to_cart", cc.buttonAddToCart);
+app.post("/api/button_subtract_from_cart", cc.buttonSubstractFromCart);
+app.post("/api/input_add_to_cart", cc.inputAddToCart);
 
 // aws download file - grokonoz video - not working
 // const awsWorker = require("./controllers/s3.controler.js");

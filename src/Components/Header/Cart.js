@@ -33,6 +33,7 @@ export default class Cart extends Component {
   }
 
   render() {
+    console.log(this.state.cart);
     const mappedCart = this.state.cart;
     if (!mappedCart.length) {
       return (
@@ -59,8 +60,8 @@ export default class Cart extends Component {
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
             return (
-              <div key={newCart.cart_id}>
-                <ul className="cart" id={newCart.cart_id}>
+              <div className="cart" key={newCart.cart_id}>
+                <ul className="cart-list" id={newCart.cart_id}>
                   <img src={newCart.image} />
                   <div>{newCart.product_name}</div>
                   <div>{newCart.quantity}</div>

@@ -84,6 +84,8 @@ FROM users
 
 
 -- cart.sql
+DROP TABLE IF EXISTS cart;
+
 CREATE TABLE cart
 (
     cart_id SERIAL PRIMARY KEY,

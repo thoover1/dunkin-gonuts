@@ -1,4 +1,29 @@
-.cart {
-  height: 80vh;
+.cart-container {
+  height: 100%;
   width: 100vw;
+  background: rgb(250, 250, 250);
+  .mapped-cart {
+    width: 80vw;
+    height: 100%;
+    border: groove;
+    border-color: red;
+    // padding-left: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .cart {
+      height: 300px;
+      width: 350px;
+      padding: 100px;
+      border: dashed;
+      border-color: blue;
+      .cart-list {
+        border: dashed;
+        border-color: green;
+        display: flex;
+      }
+    }
+  }
 }

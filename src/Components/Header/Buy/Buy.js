@@ -13,12 +13,13 @@ export default class Buy extends Component {
     super();
 
     this.state = {
-      inventory: []
-      // ,
-      // cart: []
+      inventory: [],
+      cart: []
     };
     this.getInventory = this.getInventory.bind(this);
     this.getEntireCart = this.getEntireCart.bind(this);
+    this.iconAddToCart = this.iconAddToCart.bind(this);
+    this.inputEditCart = this.inputEditCart.bind(this);
   }
 
   componentDidMount() {
@@ -26,11 +27,30 @@ export default class Buy extends Component {
     this.getEntireCart();
   }
 
-  // iconAddToCart = () => {};
+  iconAddToCart(product_id) {
+    // const user_id = this.props.user.user_id
+    axios
+      .post("/api/button_add_to_cart", { product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
 
   // iconRemoveFromCart = () => {};
 
-  // inputEditCart = () => {};
+  inputEditCart(quantity, product_id) {
+    axios
+      .post("/api/input_add_to_cart", { quantity, product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
 
   getInventory() {
     axios
@@ -55,7 +75,7 @@ export default class Buy extends Component {
   }
 
   render() {
-    const mappedCart = this.state.cart;
+    // const mappedCart = this.state.cart;
     const mappedInventory = this.state.inventory;
     if (!mappedInventory.length) {
       return (
@@ -100,6 +120,9 @@ export default class Buy extends Component {
 
         <div className="scrolling-cart">
           <div className="scrolling-cart-column">
+            {/* {mappedCart.map(item => {
+              return ( */}
+            {/* <div> */}
             <h4>CART</h4>
             <h6>Total:</h6>
             <h6>Tax:</h6>
@@ -107,6 +130,9 @@ export default class Buy extends Component {
             <Link to="/cart">
               <button>Review Order</button>
             </Link>
+            {/* </div>
+              );
+            })} */}
           </div>
         </div>
         <div className="box">
@@ -134,8 +160,23 @@ export default class Buy extends Component {
                                 </div>
                                 <div className="product-cart-options">
                                   <i class="fas fa-minus-circle"></i>
-                                  <input placeholder="amount"></input>
-                                  <i class="fas fa-plus-circle"></i>
+                                  <input
+                                    onKeyPress={() =>
+                                      this.inputEditCart(
+                                        product.quantity,
+                                        product.product_id
+                                      )
+                                    }
+                                    placeholder="amount"
+                                  >
+                                    {product.quantity}
+                                  </input>
+                                  <i
+                                    onClick={() =>
+                                      this.iconAddToCart(product.product_id)
+                                    }
+                                    class="fas fa-plus-circle"
+                                  ></i>
                                 </div>
                               </div>
                             </div>
