@@ -12,16 +12,24 @@ module.exports = {
     const { user_id } = req.session.user;
     const enitreCart = await req.app
       .put("db")
-      .input_add_to_cart([user_id, product_id, quantity]);
+      .input_add_to_cart([product_id, user_id, quantity]);
     return res.status(200).send(enitreCart);
   },
   // app.post
-  buttonEditCart: async (req, res) => {
+  buttonAddToCart: async (req, res) => {
     const { quantity, product_id } = req.body;
     const { user_id } = req.session.user;
     const enitreCart = await req.app
       .post("db")
-      .button_edit_cart([quantity, user_id, product_id]);
+      .button_add_to_cart([product_id, user_id, quantity]);
+    return res.status(200).send(enitreCart);
+  },
+  buttonSubstractFromCart: async (req, res) => {
+    const { quantity, product_id } = req.body;
+    const { user_id } = req.session.user;
+    const enitreCart = await req.app
+      .post("db")
+      .button_subtract_from_cart([product_id, user_id, quantity]);
     return res.status(200).send(enitreCart);
   }
 };

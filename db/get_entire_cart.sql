@@ -4,3 +4,4 @@ FROM users
     ON (users.user_id = cart.cart_id)
     JOIN inventory
     ON (cart.cart_id = inventory.product_id)
+

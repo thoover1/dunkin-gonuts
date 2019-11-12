@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Cart.scss";
+import loaderGIF from "../../assets/loader.gif";
 
-export default class Home extends Component {
+export default class Cart extends Component {
   constructor(props) {
     super(props);
 
-    // const reduxState = store.getState();
-
-    // this.state = {
-    //   entireCart: reduxState.entireCart
-    // };
+    this.state = {
+      cart: []
+    };
 
     // this.deleteProdocutFromCart = this.deleteProdocutFromCart.bind(this);
+  }
+
+  componentDidMount() {
+    axios
+      .get("/api/cart")
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   // // this is probably correct
@@ -23,18 +33,19 @@ export default class Home extends Component {
   }
 
   render() {
-    // const entireCart = this.state.entireCart.map((newProduct, i) => {
-    //   return (
-    //     <div
-    //       key={i}
-    //       image={newProduct.image}
-    //       product_name={newProduct.product_name}
-    //       quantity={newProduct.quantity}
-    //     />
-    //   );
-    // });
+    const mappedCart = this.state.cart;
+    if (!mappedCart.length) {
+      return (
+        <div className="spinner-container">
+          <img className="spinner" src={loaderGIF} alt="" />
+          <br />
+          Do-nut Worry! Fetching data as we speak! Sit Tight!
+        </div>
+      );
+    }
+
     return (
-      <div className="cart">
+      <div className="cart-container">
         <h1>Cart</h1>
         <div className="scrolling-cart">
           <div className="scrolling-cart-column">
@@ -45,7 +56,29 @@ export default class Home extends Component {
             <button>Checkout</button>
           </div>
         </div>
+        <div className="mapped-cart">
+          {mappedCart.map(newCart => {
+            return (
+              <div key={newCart.cart_id}>
+                <ul className="cart" id={newCart.cart_id}>
+                  <img src={newCart.image} />
+                  <div>{newCart.product_name}</div>
+                  <div>{newCart.quantity}</div>
+                </ul>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
 }
+
+// function mapReduxStateToProps(state) {
+//   return state;
+// }
+
+// export default connect(
+//   mapReduxStateToProps,
+//   { getEntireCart }
+// )(Cart);

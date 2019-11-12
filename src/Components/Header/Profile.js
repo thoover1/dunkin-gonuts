@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import { setUser } from "../../reducer";
 
 class Profile extends Component {
   render() {
+    const { lastName, firstName } = this.props;
     return (
       <div>
         <h1>This is your Profile!</h1>
         <h3>
-          {this.props.lastName}, {this.props.firstName}
+          {lastName}, {firstName}
         </h3>
         <Link to="/auth/login">
           <button

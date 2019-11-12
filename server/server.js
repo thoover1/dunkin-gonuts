@@ -6,7 +6,7 @@ const ic = require("./controllers/inventoryCtrl");
 const uc = require("./controllers/userCtrl");
 // require once Ctrl file is completed
 const cc = require("./controllers/cartCtrl");
-// const phc = require("./controllers/Ctrl");
+// const phc = require("./controllers/purchaseHistoryCtrl");
 
 // const auth = require('./middleware/authMiddleware')
 // const aws = require("aws-sdk");
@@ -43,20 +43,20 @@ app.get("/auth/userSession", uc.userSession);
 app.delete("/auth/logout", uc.logout);
 
 // only allows users with profile to use app
-app.use((req, res, next) => {
-  if (req.session.user) return next();
-  else res.sendStatus(401);
-});
+// app.use((req, res, next) => {
+//   if (req.session.user) return next();
+//   else res.sendStatus(401);
+// });
 
 // used for products
-// app.get("/api/purchase_history", pc.getPurchaseHistory);
-// app.get("/api/cart", pc.addToCurrentCart);
 
 // endpoint to display specific inventory lists
 app.get("/api/inventory", ic.getInventory);
 app.get("/api/inventory/donuts", ic.getDonutInventory);
-app.put("/api/inventory/donuts", cc.inputAddToCart);
-app.post("/api/inventory/donuts/:product_id", cc.buttonEditCart);
+
+// app.post("/api/inventory/donuts", cc.inputAddToCart);
+// app.post("/api/inventory/donuts/:product_id", cc.buttonEditCart);
+
 app.get("/api/inventory/drinks", ic.getDrinkInventory);
 app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 // NOT INSERTED INTO inventory table yet
@@ -64,6 +64,7 @@ app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 //
 // endpoint to display cart
 app.get("/api/cart", cc.getEntireCart);
+app.post("/api/button_add_to_cart", cc.buttonAddToCart);
 //
 // curious if I'll need PUT requests?
 // is the PUT what is need to update front end from SQL altering table?

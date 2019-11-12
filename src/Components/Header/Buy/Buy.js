@@ -6,7 +6,6 @@ import Sandwiches from "./Sandwiches";
 import Cards from "./Cards";
 import "./Buy.scss";
 import axios from "axios";
-// import spinnerGIF from "../../../assets/spinner.gif";
 import loaderGIF from "../../../assets/loader.gif";
 
 export default class Buy extends Component {
@@ -15,13 +14,23 @@ export default class Buy extends Component {
 
     this.state = {
       inventory: []
+      // ,
+      // cart: []
     };
     this.getInventory = this.getInventory.bind(this);
+    this.getEntireCart = this.getEntireCart.bind(this);
   }
 
   componentDidMount() {
     this.getInventory();
+    this.getEntireCart();
   }
+
+  // iconAddToCart = () => {};
+
+  // iconRemoveFromCart = () => {};
+
+  // inputEditCart = () => {};
 
   getInventory() {
     axios
@@ -34,7 +43,19 @@ export default class Buy extends Component {
       .catch(err => console.log(err));
   }
 
+  getEntireCart() {
+    axios
+      .get("/api/cart")
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
+    const mappedCart = this.state.cart;
     const mappedInventory = this.state.inventory;
     if (!mappedInventory.length) {
       return (
@@ -84,7 +105,7 @@ export default class Buy extends Component {
             <h6>Tax:</h6>
             <h6>Sum Total:</h6>
             <Link to="/cart">
-              <button>Checkout</button>
+              <button>Review Order</button>
             </Link>
           </div>
         </div>
