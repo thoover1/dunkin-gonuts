@@ -2,7 +2,7 @@ const initialState = {
   user: null,
   // cart: [],
   // amount: 0,
-  // purchase_history: [],
+
   password: "",
   // firstName: "",
   // lastName: "",
@@ -14,7 +14,7 @@ export const SET_USER = "SET_USER";
 // export const GET_ENTIRE_CART = "GET_ENTIRE_CART";
 // export const ADD_TO_CART = "ADD_TO_CART";
 // export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-// export const GET_PURCHASE_HISTORY = "GET_PURCHASE_HISTORY";
+
 export const PASSWORD = "PASSWORD";
 // export const FIRSTNAME = "FIRSTNAME";
 // export const LASTNAME = "LASTNAME";
@@ -33,8 +33,7 @@ export default function reducer(state = initialState, action) {
     //   return { ...state, cart: action.payload, amount: action.payload };
     // case REMOVE_FROM_CART:
     //   return { ...state, cart: action.payload, amount: action.payload };
-    // case GET_PURCHASE_HISTORY:
-    //   return { ...state, purchase_history: action.payload };
+
     case PASSWORD:
       return { ...state, password: action.payload };
     // case FIRSTNAME:
@@ -74,12 +73,7 @@ export function setUser(user) {
 //     payload: arr
 //   };
 // }
-// export function getPurchaseHistory(arr) {
-//   return {
-//     type: GET_PURCHASE_HISTORY,
-//     payload: arr
-//   };
-// }
+
 export function enterPassword(password) {
   return {
     type: PASSWORD,

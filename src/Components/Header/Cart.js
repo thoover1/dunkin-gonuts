@@ -11,7 +11,7 @@ export default class Cart extends Component {
       cart: []
     };
 
-    // this.deleteProdocutFromCart = this.deleteProdocutFromCart.bind(this);
+    this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
   }
 
   componentDidMount() {
@@ -25,11 +25,16 @@ export default class Cart extends Component {
       .catch(err => console.log(err));
   }
 
-  // // this is probably correct
-  deleteProductFromCart(product_id) {
-    axios.put(`/api/cart/${product_id}`).then(response => {
-      this.setState({ ...this.props.cart, product_id });
-    });
+  // // this is maybe correct
+  deleteProductFromCart(cart_id) {
+    axios
+      .delete("/api/delete_from_cart", { cart_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -59,9 +64,17 @@ export default class Cart extends Component {
         </div>
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
+            console.log(444, newCart);
             return (
               <div className="cart" key={newCart.cart_id}>
                 <ul className="cart-list" id={newCart.cart_id}>
+                  <button
+                    onClick={() =>
+                      this.deleteProductFromCart(newCart.product_id)
+                    }
+                  >
+                    X
+                  </button>
                   <img src={newCart.image} />
                   <div>{newCart.product_name}</div>
                   <div>{newCart.quantity}</div>

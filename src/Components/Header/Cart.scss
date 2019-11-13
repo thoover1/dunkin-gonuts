@@ -14,8 +14,8 @@
     justify-content: flex-start;
 
     .cart {
-      height: 300px;
-      width: 350px;
+      height: 200px;
+      width: 250px;
       padding: 100px;
       border: dashed;
       border-color: blue;
@@ -23,6 +23,10 @@
         border: dashed;
         border-color: green;
         display: flex;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
