@@ -98,7 +98,7 @@ export default class Buy extends Component {
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
           <br />
-          Do-nut Worry! Fetching data as we speak! Sit Tight!
+          Do-nut Freak Out! Fetching data as we speak! Sit Tight!
         </div>
       );
     }
