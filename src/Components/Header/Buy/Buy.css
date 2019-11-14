@@ -163,10 +163,15 @@
   color: #ff00b3;
 }
 
+.box .inventory .product .product-list .product-info .product-cart-options form {
+  width: 80%;
+}
+
 .box .inventory .product .product-list .product-info .product-cart-options input {
-  width: 40%;
+  width: 80%;
   color: #ff7b00;
   text-align: center;
+  font-size: 10px;
 }
 
 .scrolling-cart {

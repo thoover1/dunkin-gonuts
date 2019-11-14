@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import Product from "./Product";
 import axios from "axios";
 import "./Sandwiches.scss";
-// import spinnerGIF from "../../../assets/spinner.gif";
 import loaderGIF from "../../../assets/loader.gif";
 
 export default class Sandwiches extends Component {
@@ -9,9 +9,15 @@ export default class Sandwiches extends Component {
     super(props);
 
     this.state = {
-      sandwichInventory: []
+      sandwichInventory: [],
+      quantity: null,
+      product_id: null
     };
     this.getSandwichInventory = this.getSandwichInventory.bind(this);
+    this.iconAddToCart = this.iconAddToCart.bind(this);
+    this.inputEditCart = this.inputEditCart.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +35,42 @@ export default class Sandwiches extends Component {
       .catch(err => console.log(err));
   }
 
+  iconAddToCart(product_id) {
+    axios
+      .post("/api/button_add_to_cart", { product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
+  // iconRemoveFromCart = () => {};
+
+  inputEditCart(quantity, product_id) {
+    axios
+      .post("/api/input_add_to_cart", { quantity, product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.inputEditCart(this.state.quantity, this.state.product_id);
+  }
+
   render() {
     const mappedSandwichInventory = this.state.sandwichInventory;
     if (!mappedSandwichInventory.length) {
@@ -43,24 +85,11 @@ export default class Sandwiches extends Component {
           <div className="inventory">
             {mappedSandwichInventory.map(product => {
               return (
-                <div key={product.product_id}>
-                  <ul className="product" id={product.product_id}>
-                    <div className="product-list">
-                      <img src={product.image} alt="" />
-                      <div className="product-info">
-                        <div className="product-info-a">
-                          <div>{product.product_name}</div>
-                          <div>${product.price}</div>
-                        </div>
-                        <div className="product-cart-options">
-                          <i class="fas fa-minus-circle"></i>
-                          <input placeholder="amount"></input>
-                          <i class="fas fa-plus-circle"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </ul>
-                </div>
+                <Product
+                  product={product}
+                  iconAddToCart={this.iconAddToCart}
+                  inputEditCart={this.inputEditCart}
+                />
               );
             })}
           </div>

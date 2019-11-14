@@ -65,7 +65,7 @@ app.get("/api/cart", cc.getEntireCart);
 app.post("/api/button_add_to_cart", cc.buttonAddToCart);
 app.post("/api/button_subtract_from_cart", cc.buttonSubstractFromCart);
 app.post("/api/input_add_to_cart", cc.inputAddToCart);
-app.delete("/api/delete_from_cart", cc.deleteFromCart);
+app.delete("/api/delete_from_cart/:cart_id/", cc.deleteFromCart);
 
 // aws download file - grokonoz video - not working
 // const awsWorker = require("./controllers/s3.controler.js");

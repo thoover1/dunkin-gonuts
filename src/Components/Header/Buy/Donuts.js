@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Product from "./Product";
 import axios from "axios";
 import "./Donuts.scss";
 import loaderGIF from "../../../assets/loader.gif";
@@ -8,18 +9,15 @@ export default class Donuts extends Component {
     super(props);
 
     this.state = {
-      donutInventory: []
+      donutInventory: [],
+      quantity: null,
+      product_id: null
     };
     this.getDonutInventory = this.getDonutInventory.bind(this);
-    this.addProductToCart = this.addProductToCart.bind(this);
-  }
-
-  // // not sure if this is correct....
-  addProductToCart(product_id) {
-    axios.post(`/api/inventory/donuts/${product_id}`).then(response => {
-      this.setState({ ...this.props.cart, product_id });
-    });
-    console.log(`onclick worked on product id = ${product_id}`);
+    this.iconAddToCart = this.iconAddToCart.bind(this);
+    this.inputEditCart = this.inputEditCart.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +35,42 @@ export default class Donuts extends Component {
       .catch(err => console.log(err));
   }
 
+  iconAddToCart(product_id) {
+    axios
+      .post("/api/button_add_to_cart", { product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
+  // iconRemoveFromCart = () => {};
+
+  inputEditCart(quantity, product_id) {
+    axios
+      .post("/api/input_add_to_cart", { quantity, product_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.inputEditCart(this.state.quantity, this.state.product_id);
+  }
+
   render() {
     const mappedDonutInventory = this.state.donutInventory;
     if (!mappedDonutInventory.length) {
@@ -51,27 +85,11 @@ export default class Donuts extends Component {
         <div className="inventory">
           {mappedDonutInventory.map(product => {
             return (
-              <div key={product.product_id}>
-                <ul className="product" id={product.product_id}>
-                  <div className="product-list">
-                    <img src={product.image} alt="" />
-                    <div className="product-info">
-                      <div className="product-info-a">
-                        <div>{product.product_name}</div>
-                        <div>${product.price}</div>
-                      </div>
-                      <div className="product-cart-options">
-                        <i class="fas fa-minus-circle"></i>
-                        <input placeholder="amount"></input>
-                        <i
-                          onClick={this.addProductToCart}
-                          class="fas fa-plus-circle"
-                        ></i>
-                      </div>
-                    </div>
-                  </div>
-                </ul>
-              </div>
+              <Product
+                product={product}
+                iconAddToCart={this.iconAddToCart}
+                inputEditCart={this.inputEditCart}
+              />
             );
           })}
         </div>

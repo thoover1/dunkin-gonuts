@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MappedCart from "./MappedCart";
 import axios from "axios";
 import "./Cart.scss";
 import loaderGIF from "../../assets/loader.gif";
@@ -8,10 +9,15 @@ export default class Cart extends Component {
     super(props);
 
     this.state = {
-      cart: []
+      cart: [],
+      quantity: null,
+      product_id: null
     };
-
     this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
+    this.iconAddToCart = this.iconAddToCart.bind(this);
+    this.inputEditCart = this.inputEditCart.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -25,10 +31,45 @@ export default class Cart extends Component {
       .catch(err => console.log(err));
   }
 
-  // // this is maybe correct
+  iconAddToCart(cart_id) {
+    axios
+      .post("/api/button_add_to_cart", { cart_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
+  // iconRemoveFromCart = () => {};
+
+  inputEditCart(quantity, cart_id) {
+    axios
+      .post("/api/input_add_to_cart", { quantity, cart_id })
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.inputEditCart(this.state.quantity, this.state.cart_id);
+  }
+
   deleteProductFromCart(cart_id) {
     axios
-      .delete("/api/delete_from_cart", { cart_id })
+      .delete(`/api/delete_from_cart/${cart_id}/`)
       .then(response => {
         this.setState({
           cart: response.data
@@ -64,22 +105,13 @@ export default class Cart extends Component {
         </div>
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
-            console.log(444, newCart);
             return (
-              <div className="cart" key={newCart.cart_id}>
-                <ul className="cart-list" id={newCart.cart_id}>
-                  <button
-                    onClick={() =>
-                      this.deleteProductFromCart(newCart.product_id)
-                    }
-                  >
-                    X
-                  </button>
-                  <img src={newCart.image} />
-                  <div>{newCart.product_name}</div>
-                  <div>{newCart.quantity}</div>
-                </ul>
-              </div>
+              <MappedCart
+                newCart={newCart}
+                iconAddToCart={this.iconAddToCart}
+                inputEditCart={this.inputEditCart}
+                deleteProductFromCart={this.deleteProductFromCart}
+              />
             );
           })}
         </div>

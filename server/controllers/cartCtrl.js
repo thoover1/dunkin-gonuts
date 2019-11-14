@@ -1,14 +1,10 @@
 module.exports = {
   getEntireCart: async (req, res) => {
     const { user_id } = req.session.user;
-    console.log("from the get", req.session.user);
-    const db = req.app.get("db");
-    db.get_entire_cart(user_id).then(entireCart => {
-      res.status(200).send(entireCart);
-    });
+    const db = await req.app.get("db");
+    const entireCart = await db.get_entire_cart([user_id]);
+    res.status(200).send(entireCart);
   },
-  // similar to add_user_treasure
-  // app.put
   inputAddToCart: async (req, res) => {
     const { quantity, product_id } = req.body;
     const { user_id } = req.session.user;
@@ -20,7 +16,6 @@ module.exports = {
     ]);
     return res.status(200).send(entireCart);
   },
-  // app.post
   buttonAddToCart: async (req, res) => {
     const { product_id } = req.body;
     const { user_id } = req.session.user;
@@ -39,9 +34,8 @@ module.exports = {
     return res.status(200).send(entireCart);
   },
   deleteFromCart: async (req, res) => {
-    const { cart_id } = req.body;
+    const { cart_id } = req.params;
     const { user_id } = req.session.user;
-    console.log("from the delete", req.session.user, cart_id);
     const db = req.app.get("db");
     const entireCart = await db.delete_from_cart([cart_id, user_id]);
     res.status(200).send(entireCart);

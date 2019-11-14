@@ -95,10 +95,14 @@
             i {
               color: rgb(255, 0, 179);
             }
+            form {
+              width: 80%;
+            }
             input {
-              width: 40%;
+              width: 80%;
               color: rgb(255, 123, 0);
               text-align: center;
+              font-size: 10px;
             }
           }
         }
