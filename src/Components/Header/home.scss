@@ -8,7 +8,11 @@
   // overflow: hidden;
 }
 .video {
+<<<<<<< HEAD
   width: 100vw;
+=======
+  width: 73vw;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   height: auto;
   z-index: 1;
 }
@@ -26,7 +30,11 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+<<<<<<< HEAD
     background-color: rgba(247, 65, 141, 0.801);
+=======
+    background-color: rgb(247, 65, 141);
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     color: white;
     font-size: 50px;
     padding: 12px 24px;
@@ -44,7 +52,11 @@
   position: relative;
   width: 100%;
   img {
+<<<<<<< HEAD
     width: 100vw;
+=======
+    width: 73vw;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     height: auto;
   }
   .location-btn,
@@ -54,7 +66,11 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+<<<<<<< HEAD
     background-color: rgba(247, 65, 141, 0.801);
+=======
+    background-color: rgb(247, 65, 141);
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     color: white;
     font-size: 50px;
     padding: 12px 24px;
@@ -103,6 +119,13 @@
   }
 }
 
+<<<<<<< HEAD
+=======
+// .staticMap {
+//   width: 90vw;
+// }
+
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 // .overlay {
 //   width: 100%;
 //   position: absolute;
@@ -114,6 +137,7 @@
 //   margin-top: 0;
 //   padding: 0;
 // }
+<<<<<<< HEAD
 
 @media (max-width: 1350px) {
   .mobileApp-section {
@@ -247,3 +271,5 @@
     }
   }
 }
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

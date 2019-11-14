@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .spinner-container {
   height: 80vh;
   width: 100vw;
@@ -11,11 +12,14 @@
   }
 }
 
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 .buy-container {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
   background: rgb(250, 250, 250);
+<<<<<<< HEAD
   padding-top: 50px;
   padding-bottom: 10px;
   font-size: 30px;
@@ -28,10 +32,13 @@
   h3 {
     color: rgb(255, 0, 179);
   }
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 }
 
 .box {
   background: rgb(250, 250, 250);
+<<<<<<< HEAD
   .inventory {
     height: 100%;
     width: 80vw;
@@ -107,6 +114,13 @@
           }
         }
       }
+=======
+  div {
+    h1,
+    p {
+      width: 75vw;
+      padding-left: 100px;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     }
   }
 }
@@ -114,6 +128,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+<<<<<<< HEAD
   padding: 30px 30px 0 0;
   background: rgb(250, 250, 250);
   .scrolling-cart-column {
@@ -122,13 +137,27 @@
     position: fixed;
     background: white;
     border: rgb(255, 0, 179);
+=======
+  padding: 20px 20px 0 0;
+  background: rgb(250, 250, 250);
+  .scrolling-cart-column {
+    height: 32vh;
+    width: 12vw;
+    position: fixed;
+    background: white;
+    border: orange;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     border-style: solid;
     border-radius: 15px;
     border-width: 5px;
 
     button {
       height: 30px;
+<<<<<<< HEAD
       width: 100px;
+=======
+      width: 90px;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
       background: green;
       color: white;
       border: none;
@@ -138,6 +167,7 @@
     }
   }
 }
+<<<<<<< HEAD
 
 @media (max-width: 1300px) {
   .box {
@@ -221,3 +251,5 @@
     }
   }
 }
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

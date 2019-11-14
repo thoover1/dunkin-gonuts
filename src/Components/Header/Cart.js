@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import MappedCart from "./MappedCart";
 import axios from "axios";
 import "./Cart.scss";
@@ -115,10 +116,19 @@ export default class Cart extends Component {
             );
           })}
         </div>
+=======
+
+export default class Home extends Component {
+  render() {
+    return (
+      <div className="cart">
+        <h1>Cart</h1>
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
       </div>
     );
   }
 }
+<<<<<<< HEAD
 
 // function mapReduxStateToProps(state) {
 //   return state;
@@ -128,3 +138,5 @@ export default class Cart extends Component {
 //   mapReduxStateToProps,
 //   { getEntireCart }
 // )(Cart);
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

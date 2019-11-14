@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import Product from "./Product";
 import axios from "axios";
 import "./Sandwiches.scss";
@@ -96,5 +97,19 @@ export default class Sandwiches extends Component {
         </div>
       );
     }
+=======
+
+export default class Donuts extends Component {
+  render() {
+    return (
+      <div>
+        <li>Sandwich1</li>
+        <li>Sandwich2</li>
+        <li>Sandwich3</li>
+        <li>Sandwich4</li>
+        <li>Sandwich5</li>
+      </div>
+    );
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   }
 }

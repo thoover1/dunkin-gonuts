@@ -11,16 +11,27 @@ CREATE TABLE users
     user_id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password TEXT NOT NULL,
+<<<<<<< HEAD
     email TEXT UNIQUE NOT NULL,
     phone_number INTEGER NOT NULL
+=======
+    email TEXT UNIQUE NOT NULL
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 );
 
 INSERT INTO users
     (
+<<<<<<< HEAD
     username, password, email, phone_number
     )
 VALUES
     ('thoover1', '$2b$12$HEjva0QfF7bWFSFIVoJZA.8dOqiNoFCeTZ.AHexC2MmeJawoukA2.', 'thoover1@uab.edu', 2108676362);
+=======
+    username, password, email
+    )
+VALUES
+    ('thoover1', '$2b$12$HEjva0QfF7bWFSFIVoJZA.8dOqiNoFCeTZ.AHexC2MmeJawoukA2.', 'thoover1@uab.edu');
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 
 CREATE TABLE inventory
 (
@@ -34,6 +45,7 @@ CREATE TABLE inventory
 INSERT INTO inventory
     (product_name, price, category, image)
 VALUES
+<<<<<<< HEAD
     ('glazed', 1, 'donut', 'https://webstockreview.net/images/donut-clipart-frosted-6.png'),
     ('raspberry-filled', 1, 'donut', 'https://i.pinimg.com/originals/5e/c8/15/5ec815c3b99e672896f726b6c43a0afe.png'),
     ('bavarian cream', 1, 'donut', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d172d7b1-a7b9-4d76-9d62-b7e135be03a1/dbtjxpf-85425638-a0b5-427f-bd37-ee905733b4ba.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QxNzJkN2IxLWE3YjktNGQ3Ni05ZDYyLWI3ZTEzNWJlMDNhMVwvZGJ0anhwZi04NTQyNTYzOC1hMGI1LTQyN2YtYmQzNy1lZTkwNTczM2I0YmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gdBbSXoGv8ENXtzITp2QHgIhoxpaA2tPUwnl7eS-2cM'),
@@ -43,6 +55,17 @@ VALUES
     ('pumpkin-cream-filled', 2, 'donut', 'https://www.krispykreme.com/getattachment/90e0ab48-5c8c-4a36-962b-92241e733b3c/Original-Filled-Original-Kreme%E2%84%A2.aspx?width=310&height=310&mode=max&quality=60&format=jpg'),
     ('gluten-free-sprinkles', 2, 'donut', 'https://i.pinimg.com/originals/05/b1/e9/05b1e957ba70dc5aae061e4dfad17455.png'),
     ('vegan-glazed', 2, 'donut', 'https://webstockreview.net/images/donut-clipart-frosted-6.png'),
+=======
+    ('glazed', 1, 'donut', 'https://www.pikpng.com/pngl/m/56-560849_glazed-donut-png-transparent-png.png'),
+    ('raspberry-filled', 1, 'donut', 'https://mpng.pngfly.com/20180701/wvw/kisspng-donuts-gelatin-dessert-bakery-stuffing-jelly-dough-french-tacos-5b39590b113126.5426527715304850030704.jpg'),
+    ('bavarian cream', 1, 'donut', 'https://cdn.imgbin.com/11/5/18/imgbin-donuts-bavarian-cream-boston-cream-doughnut-profiterole-chocolate-donuts-64n457iLjSMRqau0L03Ubj51p.jpg'),
+    ('sprinkles', 1, 'donut', 'https://p1.hiclipart.com/preview/814/298/558/28-donuts-s-doughnut-with-sprinkles.jpg'),
+    ('sugar', 1, 'donut', 'https://banner2.cleanpng.com/20180614/fz/kisspng-cider-doughnut-donuts-ciambella-bagel-rye-bread-purple-sweet-potato-5b2294e98c6704.2996669415289930015751.jpg'),
+    ('chocolate-frosting', 1, 'donut', 'https://www.pngfind.com/pngs/m/301-3010673_chocolate-glazed-donut-donuts-chocolate-glaze-png-transparent.png'),
+    ('pumpkin-cream-filled', 2, 'donut', 'https://cdn0.wideopeneats.com/wp-content/uploads/2019/09/krispy-kreme-1-720x405.png'),
+    ('gluten-free-sprinkles', 2, 'donut', 'https://banner2.cleanpng.com/20171216/452/donut-png-5a35ec27e8b5c9.4109497115134833039532.jpg'),
+    ('vegan-glazed', 2, 'donut', 'https://cdn.imgbin.com/0/9/23/imgbin-donut-BEF1VTpzWApHAwFrhNdUKeUpE.jpg'),
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     ('hot-coffee', 2, 'drink', 'https://www.dunkindonuts.com/content/dam/dd/img/products/hot-drinks/coffee/tiles/LP-promo-x2-hot-coffee-620x506.jpg'),
     ('iced-coffee', 3, 'drink', 'https://cdn.vox-cdn.com/thumbor/i0f36J9AcNnhmH6S_NdPYKCPnc0=/570x52:2902x1801/1200x675/filters:focal(570x52:2902x1801)/cdn.vox-cdn.com/uploads/chorus_image/image/50294731/headered.0.0.jpg'),
     ('blended-coffee', 3, 'drink', 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmRc6czT7-V64VP129PYg0ioP4aH_BhLeZhZ4sQwphoi2yUWpC'),
@@ -64,11 +87,19 @@ CREATE TABLE purchase_history
     product_id INTEGER REFERENCES inventory(product_id)
 );
 
+<<<<<<< HEAD
 INSERT INTO purchase_history
     (user_id, product_id)
 VALUES
     -- this may or may not be correct....
     ($1, $2);
+=======
+-- seems generic... feels like I should insert this into a new table(i.e. add_to_cart.sql)???
+INSERT INTO purchase_history
+    (user_id, product_id)
+VALUES
+    (1, 1);
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 
 
 -- user purchase history on one table for chartjs
@@ -83,6 +114,7 @@ FROM users
     ON (purchase_history.product_id = inventory.product_id);
 
 
+<<<<<<< HEAD
 -- cart.sql
 DROP TABLE IF EXISTS cart;
 
@@ -107,6 +139,8 @@ WHERE cart.user_id = $1;
 
 
 
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 --############### ICEBOX ###############--
 -- CREATE TABLE previous_order
 -- (

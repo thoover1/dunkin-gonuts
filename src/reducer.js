@@ -1,4 +1,5 @@
 const initialState = {
+<<<<<<< HEAD
   user: null,
   // cart: [],
   // amount: 0,
@@ -44,6 +45,17 @@ export default function reducer(state = initialState, action) {
       return { ...state, email: action.payload };
     case PHONE_NUMBER:
       return { ...state, phoneNumber: action.payload };
+=======
+  user: null
+};
+
+export const SET_USER = "SET_USER";
+
+export default function reducer(state = initialState, action) {
+  switch (action.type) {
+    case SET_USER:
+      return { user: action.payload };
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     default:
       return state;
   }
@@ -55,6 +67,7 @@ export function setUser(user) {
     payload: user
   };
 }
+<<<<<<< HEAD
 // export function getEntireCart(arr) {
 //   return {
 //     type: GET_ENTIRE_CART,
@@ -104,3 +117,5 @@ export function enterPhoneNumber(phone_number) {
     payload: phone_number
   };
 }
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 // import { Link } from "react-router-dom";
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 import { connect } from "react-redux";
 import { setUser } from "../reducer";
 import axios from "axios";
@@ -13,7 +16,10 @@ class AuthComponent extends Component {
       email: "",
       password: "",
       username: "",
+<<<<<<< HEAD
       phone_number: "",
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
       register: true
     };
     this.register = this.register.bind(this);
@@ -21,12 +27,20 @@ class AuthComponent extends Component {
   }
 
   async register() {
+<<<<<<< HEAD
     const { email, password, username, phone_number } = this.state;
     const registeredUser = await axios.post("/auth/register", {
       email,
       username,
       password,
       phone_number
+=======
+    const { email, password, username } = this.state;
+    const registeredUser = await axios.post("/auth/register", {
+      email,
+      username,
+      password
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     });
     this.props.setUser(registeredUser.data);
   }
@@ -41,7 +55,11 @@ class AuthComponent extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     const { email, username, password, phone_number, register } = this.state;
+=======
+    const { email, username, password, register } = this.state;
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     return this.props.user ? (
       <Redirect to="/profile" />
     ) : (
@@ -95,6 +113,7 @@ class AuthComponent extends Component {
               }
             />
           </div>
+<<<<<<< HEAD
           {register && (
             <div className="input-container">
               <label>Phone Number</label>
@@ -109,6 +128,8 @@ class AuthComponent extends Component {
               />
             </div>
           )}
+=======
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
           <button>{register ? "Register" : "Login"}</button>
         </form>
         {!register && (
@@ -146,9 +167,16 @@ const mapDispatchToProps = {
   setUser
 };
 
+<<<<<<< HEAD
 const enhancedComponent = connect(
   mapReduxStateToProps,
   mapDispatchToProps
 );
 
 export default enhancedComponent(AuthComponent);
+=======
+export default connect(
+  mapReduxStateToProps,
+  mapDispatchToProps
+)(AuthComponent);
+>>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
