@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import donutVideo from "../../assets/donutVideo.mp4";
 import coffeeVideo from "../../assets/coffeeVideo.mp4";
-=======
-import donutVideo from "./donutVideo.mp4";
-import coffeeVideo from "./coffeeVideo.mp4";
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 import locationIMG from "../../assets/locationIMG.jpg";
 import mobileAppPNG from "../../assets/mobileAppPNG.png";
 import mobileApplePNG from "../../assets/mobileApplePNG.png";
@@ -23,11 +18,7 @@ export default class Home extends Component {
         {/* <div className="overlay"></div> */}
         <div className="home-containers">
           <div className="menu-section">
-<<<<<<< HEAD
             <video className="video" autoPlay loop muted preload>
-=======
-            <video className="video" autoPlay loop muted>
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
               <source src={donutVideo} type="video/mp4" />
             </video>
             <Link to="/buy">

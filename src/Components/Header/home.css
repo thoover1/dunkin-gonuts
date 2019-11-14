@@ -4,17 +4,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.13);
 }
 
 .video {
-<<<<<<< HEAD
   width: 100vw;
-=======
-  width: 73vw;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   height: auto;
   z-index: 1;
 }
@@ -38,12 +34,8 @@
   top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-<<<<<<< HEAD
+  transform: translate(-50%, -50%);
   background-color: rgba(247, 65, 141, 0.801);
-=======
-  background-color: #f7418d;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   color: white;
   font-size: 50px;
   padding: 12px 24px;
@@ -67,11 +59,7 @@
 .sandwich-section img,
 .giftCard-section img,
 .pumpkin-section img {
-<<<<<<< HEAD
   width: 100vw;
-=======
-  width: 73vw;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   height: auto;
 }
 
@@ -94,12 +82,8 @@
   top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-<<<<<<< HEAD
+  transform: translate(-50%, -50%);
   background-color: rgba(247, 65, 141, 0.801);
-=======
-  background-color: #f7418d;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   color: white;
   font-size: 50px;
   padding: 12px 24px;
@@ -119,7 +103,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   top: 60%;
   left: 10%;
 }
@@ -134,7 +118,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   top: 60%;
   left: 10%;
   background: transparent;
@@ -150,7 +134,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   top: 40%;
   left: 10%;
 }
@@ -165,23 +149,22 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   top: 40%;
   left: 10%;
   background: transparent;
 }
-<<<<<<< HEAD
 
 @media (max-width: 1350px) {
   .mobileApp-section .mobileApple-btn img {
     height: 60px;
     -webkit-transform: translate(-30%, -50%);
-            transform: translate(-30%, -50%);
+    transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 80px;
     -webkit-transform: translate(-32%, -50%);
-            transform: translate(-32%, -50%);
+    transform: translate(-32%, -50%);
   }
 }
 
@@ -189,12 +172,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 45px;
     -webkit-transform: translate(-30%, -50%);
-            transform: translate(-30%, -50%);
+    transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 60px;
     -webkit-transform: translate(-32%, -50%);
-            transform: translate(-32%, -50%);
+    transform: translate(-32%, -50%);
   }
 }
 
@@ -224,12 +207,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 30px;
     -webkit-transform: translate(-30%, -50%);
-            transform: translate(-30%, -50%);
+    transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 40px;
     -webkit-transform: translate(-32%, -50%);
-            transform: translate(-32%, -50%);
+    transform: translate(-32%, -50%);
   }
 }
 
@@ -259,12 +242,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 20px;
     -webkit-transform: translate(-30%, -50%);
-            transform: translate(-30%, -50%);
+    transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 26px;
     -webkit-transform: translate(-32%, -50%);
-            transform: translate(-32%, -50%);
+    transform: translate(-32%, -50%);
   }
 }
 
@@ -289,6 +272,4 @@
     padding: 2px 8px;
   }
 }
-=======
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 /*# sourceMappingURL=home.css.map */
