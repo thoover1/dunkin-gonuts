@@ -92,6 +92,11 @@ app.delete("/api/delete_from_cart/:cart_id/", cc.deleteFromCart);
 // })();
 // debugger;
 
+// const path = require("path");
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../build/index.html"));
+// });
+
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);
 });
