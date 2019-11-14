@@ -14,10 +14,11 @@ const cc = require("./controllers/cartCtrl");
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
-// for static server - doesn't work yet
-
 const app = express();
+
+// for static server - doesn't work yet
 app.use(express.static(`${__dirname} /../build`));
+
 app.use(express.json());
 app.use(
   session({
