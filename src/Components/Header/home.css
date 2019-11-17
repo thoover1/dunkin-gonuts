@@ -10,11 +10,7 @@
 }
 
 .video {
-<<<<<<< HEAD
   width: 100vw;
-=======
-  width: 73vw;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   height: auto;
   z-index: 1;
 }
@@ -39,11 +35,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-<<<<<<< HEAD
   background-color: rgba(247, 65, 141, 0.801);
-=======
-  background-color: #f7418d;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   color: white;
   font-size: 50px;
   padding: 12px 24px;
@@ -67,11 +59,7 @@
 .sandwich-section img,
 .giftCard-section img,
 .pumpkin-section img {
-<<<<<<< HEAD
   width: 100vw;
-=======
-  width: 73vw;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   height: auto;
 }
 
@@ -95,11 +83,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-<<<<<<< HEAD
   background-color: rgba(247, 65, 141, 0.801);
-=======
-  background-color: #f7418d;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   color: white;
   font-size: 50px;
   padding: 12px 24px;
@@ -170,7 +154,6 @@
   left: 10%;
   background: transparent;
 }
-<<<<<<< HEAD
 
 @media (max-width: 1350px) {
   .mobileApp-section .mobileApple-btn img {
@@ -289,6 +272,4 @@
     padding: 2px 8px;
   }
 }
-=======
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 /*# sourceMappingURL=home.css.map */

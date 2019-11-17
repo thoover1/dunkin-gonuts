@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 import MappedCart from "./MappedCart";
 import axios from "axios";
 import "./Cart.scss";
 import loaderGIF from "../../assets/loader.gif";
+import ScrollingCart from "../ScrollingCart";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Cart extends Component {
       product_id: null
     };
     this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
-    this.iconAddToCart = this.iconAddToCart.bind(this);
+    // this.iconAddToCart = this.iconAddToCart.bind(this);
     this.inputEditCart = this.inputEditCart.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,16 +32,16 @@ export default class Cart extends Component {
       .catch(err => console.log(err));
   }
 
-  iconAddToCart(cart_id) {
-    axios
-      .post("/api/button_add_to_cart", { cart_id })
-      .then(response => {
-        this.setState({
-          cart: response.data
-        });
-      })
-      .catch(err => console.log(err));
-  }
+  // iconAddToCart(cart_id) {
+  //   axios
+  //     .post("/api/button_add_to_cart", { cart_id })
+  //     .then(response => {
+  //       this.setState({
+  //         cart: response.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
   // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
   // iconRemoveFromCart = () => {};
@@ -83,27 +83,13 @@ export default class Cart extends Component {
     console.log(this.state.cart);
     const mappedCart = this.state.cart;
     if (!mappedCart.length) {
-      return (
-        <div className="spinner-container">
-          <img className="spinner" src={loaderGIF} alt="" />
-          <br />
-          Do-nut Worry! Fetching data as we speak! Sit Tight!
-        </div>
-      );
+      return <div className="empty cart">Your cart is empty</div>;
     }
 
     return (
       <div className="cart-container">
         <h1>Cart</h1>
-        <div className="scrolling-cart">
-          <div className="scrolling-cart-column">
-            <h4>CART</h4>
-            <h6>Total:</h6>
-            <h6>Tax:</h6>
-            <h6>Sum Total:</h6>
-            <button>Checkout</button>
-          </div>
-        </div>
+        <ScrollingCart />
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
             return (
@@ -116,19 +102,10 @@ export default class Cart extends Component {
             );
           })}
         </div>
-=======
-
-export default class Home extends Component {
-  render() {
-    return (
-      <div className="cart">
-        <h1>Cart</h1>
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
       </div>
     );
   }
 }
-<<<<<<< HEAD
 
 // function mapReduxStateToProps(state) {
 //   return state;
@@ -138,5 +115,3 @@ export default class Home extends Component {
 //   mapReduxStateToProps,
 //   { getEntireCart }
 // )(Cart);
-=======
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

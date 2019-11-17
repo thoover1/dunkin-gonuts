@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 import Product from "./Product";
 import axios from "axios";
 import "./Donuts.scss";
@@ -94,23 +93,6 @@ export default class Donuts extends Component {
             );
           })}
         </div>
-=======
-
-export default class Donuts extends Component {
-  render() {
-    return (
-      <div>
-        <li>Donut1</li>
-        <li>Donut2</li>
-        <li>Donut3</li>
-        <li>Donut4</li>
-        <li>Donut5</li>
-        <li>Donut6</li>
-        <li>Donut7</li>
-        <li>Donut8</li>
-        <li>Donut9</li>
-        <li>Donut10</li>
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
       </div>
     );
   }

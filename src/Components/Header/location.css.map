@@ -1,10 +1,6 @@
 {
     "version": 3,
-<<<<<<< HEAD
     "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CAKb;;AAPD,AAGE,cAHY,CAGZ,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,OAAgB;CACxB;;AAGH,MAAM,EAAE,SAAS,EAAE,KAAK;EACtB,AACE,cADY,CACZ,EAAE,CAAC;IACD,SAAS,EAAE,IAAI;GAChB",
-=======
-    "mappings": "",
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
     "sources": [
         "location.scss"
     ],

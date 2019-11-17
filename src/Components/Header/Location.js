@@ -40,7 +40,6 @@ export default class Home extends Component {
   };
 
   render() {
-<<<<<<< HEAD
     return (
       <div className="map-container">
         <br />
@@ -53,8 +52,5 @@ export default class Home extends Component {
         <MapComponent currentLocation={this.state.currentLatLng} />
       </div>
     );
-=======
-    return <MapComponent currentLocation={this.state.currentLatLng} />;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   }
 }

@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 .cart-container {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background: #fafafa;
 }
@@ -8,8 +7,6 @@
 .cart-container .mapped-cart {
   width: 80vw;
   height: 100%;
-  border: groove;
-  border-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,32 +16,71 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cart-container .mapped-cart .cart {
-  height: 200px;
-  width: 250px;
-  padding: 100px;
-  border: dashed;
-  border-color: blue;
-}
-
-.cart-container .mapped-cart .cart .cart-list {
-  border: dashed;
-  border-color: green;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.cart-container .mapped-cart .cart .cart-list img {
+.cart-container .mapped-cart .cart .cart-list {
+  height: 100%;
   width: 100%;
+  padding: 10px;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .delete-button {
+  height: 48%;
+  width: 15%;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-img-name-price {
+  width: 40%;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-img-name-price img {
+  width: 20%;
   height: auto;
 }
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-quantity {
+  width: 20%;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-options {
+  border: dashed;
+  border-color: red;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-options .cart-form .cart-input {
+  width: 50%;
+}
+
+.cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-total {
+  width: 30%;
+}
 /*# sourceMappingURL=Cart.css.map */
-=======
-/* No CSS *//*# sourceMappingURL=Cart.css.map */
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
