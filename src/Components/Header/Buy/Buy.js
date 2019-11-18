@@ -33,30 +33,35 @@ export default class Buy extends Component {
     this.getEntireCart();
   }
 
+  // async getInventory() {
+  //   await axios
+  //     .get("/api/inventory")
+  //     .then(response => {
+  //       this.setState({
+  //         inventory: response.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+  // }
+
   async getInventory() {
-    await axios
-      .get("/api/inventory")
-      .then(response => {
-        this.setState({
-          inventory: response.data
-        });
-      })
-      .catch(err => console.log(err));
+    const res = await axios.get("/api/inventory");
+    const { data } = await res;
+    this.setState({
+      inventory: data
+    });
   }
 
   async getEntireCart() {
-    await axios
-      .get("/api/cart")
-      .then(response => {
-        this.setState({
-          cart: response.data
-        });
-      })
-      .catch(err => console.log(err));
+    const res = await axios.get("/api/cart");
+    const { data } = await res;
+    this.setState({
+      cart: data
+    });
   }
 
-  async iconAddToCart(product_id) {
-    await axios
+  iconAddToCart(product_id) {
+    axios
       .post("/api/button_add_to_cart", { product_id })
       .then(response => {
         this.setState({
@@ -68,8 +73,8 @@ export default class Buy extends Component {
   // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
   // iconRemoveFromCart = () => {};
 
-  async inputEditCart(quantity, product_id) {
-    await axios
+  inputEditCart(quantity, product_id) {
+    axios
       .post("/api/input_add_to_cart", { quantity, product_id })
       .then(response => {
         this.setState({

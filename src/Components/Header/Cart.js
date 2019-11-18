@@ -11,30 +11,43 @@ export default class Cart extends Component {
 
     this.state = {
       cart: [],
-      quantity: null,
-      product_id: null
+      quantity: 0
+      // product_id: null
     };
+    this.getEntireCart = this.getEntireCart.bind(this);
     this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
     // this.iconAddToCart = this.iconAddToCart.bind(this);
-    this.inputEditCart = this.inputEditCart.bind(this);
+    // this.inputEditCart = this.inputEditCart.bind(this);
+    this.inputUpdateCart = this.inputUpdateCart.bind(this);
+    this.wipeCart = this.wipeCart.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    axios
-      .get("/api/cart")
-      .then(response => {
-        this.setState({
-          cart: response.data
-        });
-      })
-      .catch(err => console.log(err));
+    this.getEntireCart();
   }
 
-  // iconAddToCart(cart_id) {
+  // componentDidUpdate() {
+  //   this.getEntireCart();
+  // }
+
+  async getEntireCart() {
+    const res = await axios.get("/api/cart");
+    const { data } = await res;
+    this.setState({
+      cart: data
+    });
+  }
+
+  // iconAddToCart() {}
+
+  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
+  // iconRemoveFromCart = () => {};
+
+  // inputEditCart(quantity, cart_id) {
   //   axios
-  //     .post("/api/button_add_to_cart", { cart_id })
+  //     .post("/api/input_add_to_cart", { quantity, cart_id })
   //     .then(response => {
   //       this.setState({
   //         cart: response.data
@@ -42,20 +55,6 @@ export default class Cart extends Component {
   //     })
   //     .catch(err => console.log(err));
   // }
-
-  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
-  // iconRemoveFromCart = () => {};
-
-  inputEditCart(quantity, cart_id) {
-    axios
-      .post("/api/input_add_to_cart", { quantity, cart_id })
-      .then(response => {
-        this.setState({
-          cart: response.data
-        });
-      })
-      .catch(err => console.log(err));
-  }
 
   handleChange(e) {
     this.setState({
@@ -65,7 +64,7 @@ export default class Cart extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.inputEditCart(this.state.quantity, this.state.cart_id);
+    this.inputUpdateCart(this.state.cart.quantity, this.state.cart.cart_id);
   }
 
   deleteProductFromCart(cart_id) {
@@ -79,6 +78,35 @@ export default class Cart extends Component {
       .catch(err => console.log(err));
   }
 
+  wipeCart(user_id) {
+    axios
+      .delete(`/api/after_purchase_wipe_cart/${user_id}/`)
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  inputUpdateCart(quantity, cart_id) {
+    console.log(11111, quantity, cart_id);
+    axios
+      .put(`/api/input_update_cart/${cart_id}/`, { quantity })
+      .then(response => {
+        console.log("update res", response);
+        // this.setState({
+        //   cart: response.data
+        // });
+        // let num = this.state.cart.map(quanties => {
+        //   return quanties.quantity;
+        // });
+        // this.setState({
+        //   quantity: num
+        // });
+      });
+  }
+
   render() {
     console.log(this.state.cart);
     const mappedCart = this.state.cart;
@@ -89,14 +117,15 @@ export default class Cart extends Component {
     return (
       <div className="cart-container">
         <h1>Cart</h1>
-        <ScrollingCart />
+        <ScrollingCart wipeCart={this.wipeCart} />
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
             return (
               <MappedCart
                 newCart={newCart}
-                iconAddToCart={this.iconAddToCart}
-                inputEditCart={this.inputEditCart}
+                // iconAddToCart={this.iconAddToCart}
+                // inputEditCart={this.inputEditCart}
+                inputUpdateCart={this.inputUpdateCart}
                 deleteProductFromCart={this.deleteProductFromCart}
               />
             );
@@ -106,12 +135,3 @@ export default class Cart extends Component {
     );
   }
 }
-
-// function mapReduxStateToProps(state) {
-//   return state;
-// }
-
-// export default connect(
-//   mapReduxStateToProps,
-//   { getEntireCart }
-// )(Cart);

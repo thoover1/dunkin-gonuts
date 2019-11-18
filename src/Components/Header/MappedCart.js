@@ -4,9 +4,9 @@ export default class Product extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   quantity: null
-    // };
+    this.state = {
+      quantity: this.props.newCart.quantity
+    };
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -45,15 +45,15 @@ export default class Product extends Component {
                   className="cart-form"
                   onSubmit={e => {
                     e.preventDefault();
-                    this.props.inputEditCart(
-                      this.props.newCart.quantity,
+                    this.props.inputUpdateCart(
+                      this.state.quantity,
                       this.props.newCart.cart_id
                     );
                   }}
                 >
                   <input
                     className="cart-input"
-                    value={this.props.newCart.quantity}
+                    value={this.state.quantity}
                     onChange={e => this.handleChange(e)}
                     name="quantity"
                     type="number"
