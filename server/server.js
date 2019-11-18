@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
+const stripe = require("stripe")("sk_test_fxb0xX8CJsVV3SSX4gvc1zJQ009XofoGRo");
+const uuid = require("uuid/v4");
 const ic = require("./controllers/inventoryCtrl");
 const uc = require("./controllers/userCtrl");
 const cc = require("./controllers/cartCtrl");
@@ -30,7 +32,52 @@ app.use(
     }
   })
 );
+// used for stripe checkout sending info
+app.post("/checkout", async (req, res) => {
+  console.log("Request:", req.body);
 
+  let error;
+  let status;
+  try {
+    const { product, token } = req.body;
+
+    const customer = await stripe.customers.create({
+      email: token.email,
+      source: token.id
+    });
+
+    const idempotency_key = uuid();
+    const charge = await stripe.charges.create(
+      {
+        amount: product.price * 100,
+        currency: "usd",
+        customer: customer.id,
+        receipt_email: token.email,
+        description: `Purchased the ${product.name}`,
+        shipping: {
+          name: token.card.name,
+          address: {
+            line1: token.card.address_line1,
+            line2: token.card.address_line2,
+            city: token.card.address_city,
+            country: token.card.address_country,
+            postal_code: token.card.address_zip
+          }
+        }
+      },
+      {
+        idempotency_key
+      }
+    );
+    console.log("Charge:", { charge });
+    status = "success";
+  } catch (error) {
+    console.error("Error:", error);
+    status = "failure";
+  }
+
+  res.json({ error, status });
+});
 // connects server to postgreSQL
 massive(CONNECTION_STRING).then(db => {
   console.log("database connected");
@@ -43,7 +90,7 @@ app.post("/auth/login", uc.login);
 app.get("/auth/userSession", uc.userSession);
 app.delete("/auth/logout", uc.logout);
 
-// only allows users with profile to use app
+// only allows users with profile to use app - psuedo-middleware ;)
 // app.use((req, res, next) => {
 //   if (req.session.user) return next();
 //   else res.sendStatus(401);
@@ -61,12 +108,17 @@ app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
 //
 // endpoint to display cart
 app.get("/api/cart", cc.getEntireCart);
+app.get("/api/scrolling_cart", cc.getScrollingCart);
 
-// endpoints that add functionality to cart/Buy components
+// endpoints that add functionality to Buy component
 app.post("/api/button_add_to_cart", cc.buttonAddToCart);
 app.post("/api/button_subtract_from_cart", cc.buttonSubstractFromCart);
 app.post("/api/input_add_to_cart", cc.inputAddToCart);
+
+// endpoints that add functionality to Cart component
+app.put("/api/input_update_cart/:cart_id/", cc.inputUpdateCart);
 app.delete("/api/delete_from_cart/:cart_id/", cc.deleteFromCart);
+app.delete("/api/after_purchase_wipe_cart/:user_id/", cc.afterPurchaseWipeCart);
 
 // aws download file - grokonoz video - not working
 // const awsWorker = require("./controllers/s3.controler.js");

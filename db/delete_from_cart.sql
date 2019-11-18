@@ -1,6 +1,6 @@
 DELETE FROM cart 
 WHERE cart_id = $1
-    AND cart.user_id = $2;
+    AND user_id = $2;
 
 Select product_name, price, image, quantity, cart_id
 from inventory

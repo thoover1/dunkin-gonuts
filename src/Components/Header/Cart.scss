@@ -1,32 +1,79 @@
 .cart-container {
-  height: 100vh;
+  height: 100%;
   // height: 100%;
   width: 100vw;
   background: rgb(250, 250, 250);
   .mapped-cart {
     width: 80vw;
     height: 100%;
-    border: groove;
-    border-color: red;
-    // padding-left: 400px;
+    // border: groove;
+    // border-color: red;
+    // padding-left: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-
+    justify-content: center;
     .cart {
-      height: 200px;
-      width: 250px;
-      padding: 100px;
-      border: dashed;
-      border-color: blue;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      // border: dashed;
+      // border-color: blue;
+      display: flex;
       .cart-list {
-        border: dashed;
-        border-color: green;
-        display: flex;
-        img {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        // border: dashed;
+        // border-color: green;
+        // display: flex;
+        .cart-list-a {
+          height: 100%;
           width: 100%;
-          height: auto;
+          // border: dashed;
+          // border-color: purple;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .delete-button {
+            height: 48%;
+            width: 15%;
+            border-radius: 5px;
+            color: white;
+            background-color: red;
+          }
+          .cart-img-name-price {
+            width: 40%;
+            // height: 100%;
+            // border: dashed;
+            // border-color: black;
+            img {
+              width: 20%;
+              height: auto;
+            }
+          }
+          .cart-quantity {
+            width: 20%;
+            // border: dashed;
+            // border-color: orange;
+          }
+          .cart-options {
+            border: dashed;
+            border-color: red;
+            .cart-form {
+              .cart-input {
+                // display: flex;
+                // flex-wrap: nowrap;
+                // align-items: center;
+                width: 50%;
+              }
+            }
+          }
+          .cart-total {
+            width: 30%;
+            // border: groove;
+            // border-color: greenyellow;
+          }
         }
       }
     }

@@ -8,7 +8,7 @@ import Cards from "./Cards";
 import "./Buy.scss";
 import axios from "axios";
 import loaderGIF from "../../../assets/loader.gif";
-// import { ConfigurationServicePlaceholders } from "aws-sdk/lib/config_service_placeholders";
+import ScrollingCart from "../../ScrollingCart";
 
 export default class Buy extends Component {
   constructor() {
@@ -33,26 +33,31 @@ export default class Buy extends Component {
     this.getEntireCart();
   }
 
-  getInventory() {
-    axios
-      .get("/api/inventory")
-      .then(response => {
-        this.setState({
-          inventory: response.data
-        });
-      })
-      .catch(err => console.log(err));
+  // async getInventory() {
+  //   await axios
+  //     .get("/api/inventory")
+  //     .then(response => {
+  //       this.setState({
+  //         inventory: response.data
+  //       });
+  //     })
+  //     .catch(err => console.log(err));
+  // }
+
+  async getInventory() {
+    const res = await axios.get("/api/inventory");
+    const { data } = await res;
+    this.setState({
+      inventory: data
+    });
   }
 
-  getEntireCart() {
-    axios
-      .get("/api/cart")
-      .then(response => {
-        this.setState({
-          cart: response.data
-        });
-      })
-      .catch(err => console.log(err));
+  async getEntireCart() {
+    const res = await axios.get("/api/cart");
+    const { data } = await res;
+    this.setState({
+      cart: data
+    });
   }
 
   iconAddToCart(product_id) {
@@ -134,23 +139,7 @@ export default class Buy extends Component {
           </section>
         </div>
 
-        <div className="scrolling-cart">
-          <div className="scrolling-cart-column">
-            {/* {mappedCart.map(item => {
-              return ( */}
-            {/* <div> */}
-            <h4>CART</h4>
-            <h6>Total:</h6>
-            <h6>Tax:</h6>
-            <h6>Sum Total:</h6>
-            <Link to="/cart">
-              <button>Review Order</button>
-            </Link>
-            {/* </div>
-              );
-            })} */}
-          </div>
-        </div>
+        <ScrollingCart />
         <div className="box">
           <Switch>
             <Route path="/buy/donuts" component={Donuts} />
