@@ -3,7 +3,6 @@ import "./App.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import routes from "./routes";
-<<<<<<< HEAD
 import SideDrawer from "./Components/SideDrawer";
 
 export default class App extends React.Component {
@@ -40,18 +39,3 @@ export default class App extends React.Component {
     );
   }
 }
-=======
-
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      {routes}
-      <Footer />
-      'hi'
-    </div>
-  );
-}
-
-export default App;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

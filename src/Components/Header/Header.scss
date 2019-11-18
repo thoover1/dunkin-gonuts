@@ -1,16 +1,9 @@
 $primaryColor: orange;
-<<<<<<< HEAD
 $secondaryColor: rgba(247, 65, 141, 0.966);
 
 nav {
   height: 20vh;
   width: 100vw;
-=======
-
-nav {
-  height: 20vh;
-  width: 100%;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,11 +19,7 @@ img {
   height: 20vh;
 }
 
-<<<<<<< HEAD
 .link-wrap {
-=======
-.link_wrap {
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   width: 50%;
   display: flex;
   justify-content: space-around;
@@ -45,7 +34,6 @@ img {
   color: $primaryColor;
 }
 
-<<<<<<< HEAD
 .fas.fa-chevron-down.fa-xs {
   color: $primaryColor;
   padding: 2px 0 2px 8px;
@@ -120,9 +108,4 @@ i {
     margin-right: 30px;
     margin-top: -100px;
   }
-=======
-i {
-  color: $primaryColor;
-  padding: 8px 0 2px 8px;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 }

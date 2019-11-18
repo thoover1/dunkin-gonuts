@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .cart-container {
   height: 100vh;
   width: 100vw;
@@ -15,13 +14,13 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .cart-container .mapped-cart .cart {
@@ -45,6 +44,3 @@
   height: auto;
 }
 /*# sourceMappingURL=Cart.css.map */
-=======
-/* No CSS *//*# sourceMappingURL=Cart.css.map */
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42

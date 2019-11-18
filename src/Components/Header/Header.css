@@ -1,19 +1,15 @@
 nav {
   height: 20vh;
-<<<<<<< HEAD
   width: 100vw;
-=======
-  width: 100%;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0;
   margin: 0 auto;
 }
@@ -26,20 +22,16 @@ img {
   height: 20vh;
 }
 
-<<<<<<< HEAD
 .link-wrap {
-=======
-.link_wrap {
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .links {
@@ -47,13 +39,12 @@ img {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   text-decoration: none;
   font-size: 25px;
   color: orange;
 }
 
-<<<<<<< HEAD
 .fas.fa-chevron-down.fa-xs {
   color: orange;
   padding: 2px 0 2px 8px;
@@ -84,11 +75,11 @@ i {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     background: transparent;
     font-size: 36px;
     border: none;
@@ -134,10 +125,5 @@ i {
     margin-right: 30px;
     margin-top: -100px;
   }
-=======
-i {
-  color: orange;
-  padding: 8px 0 2px 8px;
->>>>>>> 4e59ad6b0277185ea42577e6e94186f2edb42c42
 }
 /*# sourceMappingURL=Header.css.map */
