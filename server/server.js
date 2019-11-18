@@ -2,11 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
-<<<<<<< HEAD
 const stripe = require("stripe")("sk_test_fxb0xX8CJsVV3SSX4gvc1zJQ009XofoGRo");
 const uuid = require("uuid/v4");
-=======
->>>>>>> 53d1e6b9cf40ed7c86120994761ea676b423605c
 const ic = require("./controllers/inventoryCtrl");
 const uc = require("./controllers/userCtrl");
 const cc = require("./controllers/cartCtrl");

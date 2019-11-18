@@ -139,27 +139,7 @@ export default class Buy extends Component {
           </section>
         </div>
 
-<<<<<<< HEAD
         <ScrollingCart />
-=======
-        <div className="scrolling-cart">
-          <div className="scrolling-cart-column">
-            {/* {mappedCart.map(item => {
-              return ( */}
-            {/* <div> */}
-            <h4>CART</h4>
-            <h6>Total:</h6>
-            <h6>Tax:</h6>
-            <h6>Sum Total:</h6>
-            <Link to="/cart">
-              <button>Review Order</button>
-            </Link>
-            {/* </div>
-              );
-            })} */}
-          </div>
-        </div>
->>>>>>> 53d1e6b9cf40ed7c86120994761ea676b423605c
         <div className="box">
           <Switch>
             <Route path="/buy/donuts" component={Donuts} />

@@ -36,9 +36,8 @@ export default class ScrollingCart extends Component {
     this.getScrollingCart();
     console.log("mount");
   }
-  componentDidUpdate(prevProps) {
-    if (prevProps.scrollingCart.length !== this.props.scrollingCart)
-      this.getScrollingCart();
+  componentDidUpdate() {
+    this.getScrollingCart();
     console.log("update");
   }
 
