@@ -135,3 +135,15 @@ export default class Cart extends Component {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+// function mapReduxStateToProps(state) {
+//   return state;
+// }
+
+// export default connect(
+//   mapReduxStateToProps,
+//   { getEntireCart }
+// )(Cart);
+>>>>>>> 53d1e6b9cf40ed7c86120994761ea676b423605c

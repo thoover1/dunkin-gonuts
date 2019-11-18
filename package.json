@@ -27,8 +27,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-social-icons": "^4.1.0",
+<<<<<<< HEAD
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^5.4.1",
+=======
+>>>>>>> 53d1e6b9cf40ed7c86120994761ea676b423605c
     "recompose": "^0.30.0",
     "redux": "^4.0.4",
     "redux-devtools": "^3.5.0",

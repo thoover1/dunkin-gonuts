@@ -16,9 +16,15 @@
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+<<<<<<< HEAD
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+=======
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+>>>>>>> 53d1e6b9cf40ed7c86120994761ea676b423605c
 }
 
 .cart-container .mapped-cart .cart {
