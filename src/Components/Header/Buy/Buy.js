@@ -26,6 +26,7 @@ export default class Buy extends Component {
     this.inputEditCart = this.inputEditCart.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.wipeCart = this.wipeCart.bind(this);
   }
 
   componentDidMount() {
@@ -95,6 +96,17 @@ export default class Buy extends Component {
     this.inputEditCart(this.state.quantity, this.state.product_id);
   }
 
+  wipeCart(user_id) {
+    axios
+      .delete(`/api/after_purchase_wipe_cart/${user_id}/`)
+      .then(response => {
+        this.setState({
+          cart: response.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     // const mappedCart = this.state.cart;
     const mappedInventory = this.state.inventory;
@@ -139,7 +151,7 @@ export default class Buy extends Component {
           </section>
         </div>
 
-        <ScrollingCart />
+        <ScrollingCart wipeCart={this.wipeCart} />
         <div className="box">
           <Switch>
             <Route path="/buy/donuts" component={Donuts} />

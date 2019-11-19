@@ -17,6 +17,18 @@ export default class ScrollingCart extends Component {
     this.getScrollingCart = this.getScrollingCart.bind(this);
   }
 
+  componentDidMount() {
+    this.getScrollingCart();
+    console.log("mount");
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.state.scrollingCart !== prevState.scrollingCart) {
+      this.getScrollingCart();
+      console.log("update");
+    }
+  }
+
   async getScrollingCart() {
     const res = await axios.get("/api/scrolling_cart");
     const { data } = await res;
@@ -32,39 +44,35 @@ export default class ScrollingCart extends Component {
     console.log("get");
   }
 
-  componentDidMount() {
-    this.getScrollingCart();
-    console.log("mount");
-  }
-  componentDidUpdate() {
-    this.getScrollingCart();
-    console.log("update");
-  }
-
   render() {
     async function handleToken(token) {
+      // this.props.wipeCart();
       const checkoutResponse = await axios.post(
         "http://localhost:3000/#/checkout",
         {
           token
         }
       );
+      // this.props.wipeCart();
       const { status } = checkoutResponse.data;
-      this.props.wipeCart();
+      // this.props.wipeCart();
       console.log("Response:", checkoutResponse.data);
       if (status === "success") {
         // toast
         alert("Success! Payment Submitted!", { type: "success" });
+        // this.props.wipeCart();
       } else {
         // toast
         alert("Something went wrong", { type: "error" });
+        // this.props.wipeCart();
       }
+      // this.props.wipeCart();
     }
 
     function getTotal(totally, num) {
       return totally + num;
     }
-
+    // null "if" doesn't work....
     if (this.state.total === null) {
       return <div className="loading-cart">Loading....</div>;
     } else if (!this.state.total.length) {
@@ -91,14 +99,14 @@ export default class ScrollingCart extends Component {
             <StripeCheckout
               stripeKey="pk_test_ANIANWG25Tgt2fvXFcMOF1Ey00NI3Ls157"
               token={handleToken}
-              billingAddress
-              shippingAddress
+              label="Checkout"
               amount={
                 (
                   this.state.total.reduce(getTotal) +
                   this.state.total.reduce(getTotal) * 0.08
                 ).toFixed(2) * 100
               }
+              closed={this.props.wipeCart}
             />
           </div>
         </div>

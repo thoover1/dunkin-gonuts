@@ -16,8 +16,6 @@ export default class Cart extends Component {
     };
     this.getEntireCart = this.getEntireCart.bind(this);
     this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
-    // this.iconAddToCart = this.iconAddToCart.bind(this);
-    // this.inputEditCart = this.inputEditCart.bind(this);
     this.inputUpdateCart = this.inputUpdateCart.bind(this);
     this.wipeCart = this.wipeCart.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -39,22 +37,6 @@ export default class Cart extends Component {
       cart: data
     });
   }
-
-  // iconAddToCart() {}
-
-  // i believe this will be a .put(UPDATE!!!! WASSSSSUP!!!!)
-  // iconRemoveFromCart = () => {};
-
-  // inputEditCart(quantity, cart_id) {
-  //   axios
-  //     .post("/api/input_add_to_cart", { quantity, cart_id })
-  //     .then(response => {
-  //       this.setState({
-  //         cart: response.data
-  //       });
-  //     })
-  //     .catch(err => console.log(err));
-  // }
 
   handleChange(e) {
     this.setState({
@@ -90,7 +72,6 @@ export default class Cart extends Component {
   }
 
   inputUpdateCart(quantity, cart_id) {
-    console.log(11111, quantity, cart_id);
     axios
       .put(`/api/input_update_cart/${cart_id}/`, { quantity })
       .then(response => {
@@ -111,7 +92,7 @@ export default class Cart extends Component {
     console.log(this.state.cart);
     const mappedCart = this.state.cart;
     if (!mappedCart.length) {
-      return <div className="empty cart">Your cart is empty</div>;
+      return <div className="empty-cart">Your cart is empty</div>;
     }
 
     return (
