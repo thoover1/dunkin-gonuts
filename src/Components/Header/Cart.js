@@ -12,7 +12,6 @@ export default class Cart extends Component {
     this.state = {
       cart: [],
       quantity: 0
-      // product_id: null
     };
     this.getEntireCart = this.getEntireCart.bind(this);
     this.deleteProductFromCart = this.deleteProductFromCart.bind(this);
@@ -25,10 +24,6 @@ export default class Cart extends Component {
   componentDidMount() {
     this.getEntireCart();
   }
-
-  // componentDidUpdate() {
-  //   this.getEntireCart();
-  // }
 
   async getEntireCart() {
     const res = await axios.get("/api/cart");
@@ -76,21 +71,14 @@ export default class Cart extends Component {
       .put(`/api/input_update_cart/${cart_id}/`, { quantity })
       .then(response => {
         console.log("update res", response);
-        // this.setState({
-        //   cart: response.data
-        // });
-        // let num = this.state.cart.map(quanties => {
-        //   return quanties.quantity;
-        // });
-        // this.setState({
-        //   quantity: num
-        // });
+        this.setState({
+          cart: response.data
+        });
       });
   }
 
   render() {
-    console.log(this.state.cart);
-    const mappedCart = this.state.cart;
+    const mappedCart = this.state.cart.sort((a, b) => a.cart_id - b.cart_id);
     if (!mappedCart.length) {
       return <div className="empty-cart">Your cart is empty</div>;
     }
@@ -98,14 +86,12 @@ export default class Cart extends Component {
     return (
       <div className="cart-container">
         <h1>Cart</h1>
-        <ScrollingCart wipeCart={this.wipeCart} />
+        <ScrollingCart wipeCart={this.wipeCart} cart={this.state.cart} />
         <div className="mapped-cart">
           {mappedCart.map(newCart => {
             return (
               <MappedCart
                 newCart={newCart}
-                // iconAddToCart={this.iconAddToCart}
-                // inputEditCart={this.inputEditCart}
                 inputUpdateCart={this.inputUpdateCart}
                 deleteProductFromCart={this.deleteProductFromCart}
               />

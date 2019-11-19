@@ -16,11 +16,13 @@ module.exports = {
     const { quantity, product_id } = req.body;
     const { user_id } = req.session.user;
     const db = req.app.get("db");
+    console.log(quantity, product_id, user_id);
     const entireCart = await db.input_add_to_cart([
       product_id,
       user_id,
       quantity
     ]);
+    console.log(entireCart);
     return res.status(200).send(entireCart);
   },
   buttonAddToCart: async (req, res) => {
