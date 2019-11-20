@@ -3,8 +3,10 @@ import Product from "./Product";
 import axios from "axios";
 import "./Drinks.scss";
 import loaderGIF from "../../../assets/loader.gif";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class Drinks extends Component {
+class Drinks extends Component {
   constructor(props) {
     super(props);
 
@@ -73,7 +75,9 @@ export default class Drinks extends Component {
 
   render() {
     const mappedDrinkInventory = this.state.drinkInventory;
-    if (!mappedDrinkInventory.length) {
+    if (this.props.user === null) {
+      return <Redirect to="/auth/login" />;
+    } else if (!mappedDrinkInventory.length) {
       return (
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
@@ -98,3 +102,9 @@ export default class Drinks extends Component {
     }
   }
 }
+
+function mapReduxStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapReduxStateToProps)(Drinks);

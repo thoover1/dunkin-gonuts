@@ -1,24 +1,43 @@
 .sideDrawer-link-wrap {
-  height: 85vh;
-  width: 30vw;
-  top: 15vh;
-  right: 0;
-  position: fixed;
+  height: 10vh;
+  width: 100vw;
+  // position: fixed;
   overflow: hidden;
   z-index: 6;
   background: white;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-around;
   font-size: 30px;
   opacity: 97%;
-  transition: 2s;
   .sideDrawer-links {
     text-decoration: none;
-    padding-right: 40px;
     color: orange;
   }
   .sideDrawer-links:hover {
     color: rgba(247, 65, 141, 0.966);
+  }
+}
+
+@media (max-width: 900px) {
+  .sideDrawer-link-wrap {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sideDrawer-link-wrap {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .sideDrawer-link-wrap {
+    padding-top: 15px;
+    padding-right: 55px;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 15px;
   }
 }

@@ -91,10 +91,10 @@ app.get("/auth/userSession", uc.userSession);
 app.delete("/auth/logout", uc.logout);
 
 // only allows users with profile to use app - psuedo-middleware ;)
-// app.use((req, res, next) => {
-//   if (req.session.user) return next();
-//   else res.sendStatus(401);
-// });
+app.use((req, res, next) => {
+  if (req.session.user) return next();
+  else res.sendStatus(401);
+});
 
 // used for products
 
@@ -103,9 +103,8 @@ app.get("/api/inventory", ic.getInventory);
 app.get("/api/inventory/donuts", ic.getDonutInventory);
 app.get("/api/inventory/drinks", ic.getDrinkInventory);
 app.get("/api/inventory/sandwiches", ic.getSandwichInventory);
-// NOT INSERTED INTO inventory table yet
-// app.get("/api/inventory/cards", pc.getCardInventory);
-//
+app.get("/api/inventory/cards", ic.getCardInventory);
+
 // endpoint to display cart
 app.get("/api/cart", cc.getEntireCart);
 app.get("/api/scrolling_cart", cc.getScrollingCart);

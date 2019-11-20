@@ -9,8 +9,10 @@ import "./Buy.scss";
 import axios from "axios";
 import loaderGIF from "../../../assets/loader.gif";
 import ScrollingCart from "../../ScrollingCart";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class Buy extends Component {
+class Buy extends Component {
   constructor(props) {
     super(props);
 
@@ -98,7 +100,9 @@ export default class Buy extends Component {
 
   render() {
     const mappedInventory = this.state.inventory;
-    if (!mappedInventory.length) {
+    if (this.props.user === null) {
+      return <Redirect to="/auth/login" />;
+    } else if (!mappedInventory.length) {
       return (
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
@@ -141,15 +145,6 @@ export default class Buy extends Component {
                 </Link>
               </div>
             </section>
-          </div>
-
-          <div className="scrolling-cart">
-            <div className="scrolling-cart-column">
-              <h4>CART</h4>
-              <h6>Total: 0</h6>
-              <h6>Tax: 0</h6>
-              <h6>Sum Total: 0</h6>
-            </div>
           </div>
 
           <div className="box">
@@ -212,6 +207,14 @@ export default class Buy extends Component {
             </div>
           </section>
         </div>
+        {/* <div className="scrolling-cart">
+            <div className="scrolling-cart-column">
+              <h4>CART</h4>
+              <h6>Total: 0</h6>
+              <h6>Tax: 0</h6>
+              <h6>Sum Total: 0</h6>
+            </div>
+          </div> */}
 
         <ScrollingCart wipeCart={this.wipeCart} cart={this.state.cart} />
         <div className="box">
@@ -244,3 +247,9 @@ export default class Buy extends Component {
     );
   }
 }
+
+function mapReduxStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapReduxStateToProps)(Buy);

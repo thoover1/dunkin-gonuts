@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import MappedCart from "./MappedCart";
 import axios from "axios";
 import "./Cart.scss";
-import loaderGIF from "../../assets/loader.gif";
+// import loaderGIF from "../../assets/loader.gif";
 import ScrollingCart from "../ScrollingCart";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class Cart extends Component {
+class Cart extends Component {
   constructor(props) {
     super(props);
 
@@ -70,7 +72,6 @@ export default class Cart extends Component {
     axios
       .put(`/api/input_update_cart/${cart_id}/`, { quantity })
       .then(response => {
-        console.log("update res", response);
         this.setState({
           cart: response.data
         });
@@ -79,7 +80,9 @@ export default class Cart extends Component {
 
   render() {
     const mappedCart = this.state.cart.sort((a, b) => a.cart_id - b.cart_id);
-    if (!mappedCart.length) {
+    if (this.props.user === null) {
+      return <Redirect to="/auth/login" />;
+    } else if (!mappedCart.length) {
       return <div className="empty-cart">Your cart is empty</div>;
     }
 
@@ -102,3 +105,9 @@ export default class Cart extends Component {
     );
   }
 }
+
+function mapReduxStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapReduxStateToProps)(Cart);

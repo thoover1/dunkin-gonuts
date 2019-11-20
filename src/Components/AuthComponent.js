@@ -2,8 +2,8 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { setUser } from "../reducer";
-import axios from "axios";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 class AuthComponent extends Component {
   constructor(props) {
@@ -46,6 +46,7 @@ class AuthComponent extends Component {
       <Redirect to="/profile" />
     ) : (
       <div className="auth-container">
+        <h1>You must login before accessing the menu or your cart</h1>
         <form
           onSubmit={e => {
             e.preventDefault();

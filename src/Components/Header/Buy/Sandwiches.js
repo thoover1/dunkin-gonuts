@@ -3,8 +3,10 @@ import Product from "./Product";
 import axios from "axios";
 import "./Sandwiches.scss";
 import loaderGIF from "../../../assets/loader.gif";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class Sandwiches extends Component {
+class Sandwiches extends Component {
   constructor(props) {
     super(props);
 
@@ -73,7 +75,9 @@ export default class Sandwiches extends Component {
 
   render() {
     const mappedSandwichInventory = this.state.sandwichInventory;
-    if (!mappedSandwichInventory.length) {
+    if (this.props.user === null) {
+      return <Redirect to="/auth/login" />;
+    } else if (!mappedSandwichInventory.length) {
       return (
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
@@ -98,3 +102,9 @@ export default class Sandwiches extends Component {
     }
   }
 }
+
+function mapReduxStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapReduxStateToProps)(Sandwiches);

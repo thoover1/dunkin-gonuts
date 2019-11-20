@@ -3,8 +3,10 @@ import Product from "./Product";
 import axios from "axios";
 import "./Donuts.scss";
 import loaderGIF from "../../../assets/loader.gif";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export default class Donuts extends Component {
+class Donuts extends Component {
   constructor(props) {
     super(props);
 
@@ -73,7 +75,9 @@ export default class Donuts extends Component {
 
   render() {
     const mappedDonutInventory = this.state.donutInventory;
-    if (!mappedDonutInventory.length) {
+    if (this.props.user === null) {
+      return <Redirect to="/auth/login" />;
+    } else if (!mappedDonutInventory.length) {
       return (
         <div className="spinner-container">
           <img className="spinner" src={loaderGIF} alt="" />
@@ -97,3 +101,9 @@ export default class Donuts extends Component {
     );
   }
 }
+
+function mapReduxStateToProps(reduxState) {
+  return reduxState;
+}
+
+export default connect(mapReduxStateToProps)(Donuts);

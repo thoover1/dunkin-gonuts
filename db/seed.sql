@@ -54,7 +54,10 @@ VALUES
     ('egg-cheese-muffin', 4, 'sandwich', 'https://www.dunkindonuts.com/content/dam/dd/img/products/sandwiches-wraps/egg-cheese/tiles/lp-promo-x2-egg-&-cheese-620x506.jpg'),
     ('glazed-breakfast', 4, 'sandwich', 'https://s3.amazonaws.com/cms.ipressroom.com/285/files/201602/56afcab0acae6e374ce05291_Glazed_Donut_Breakfast_Sandwich/Glazed_Donut_Breakfast_Sandwich_23e5e03a-6512-427d-89a8-2ff7874e1b4c-prv.jpg'),
     ('bacon-egg-cheese-wrap', 3, 'sandwich', 'https://www.dunkindonuts.com/content/dam/dd/img/products/sandwiches-wraps/wake-up-wraps/heros/hero-product-wake-up-wraps-640x480.jpg'),
-    ('eggwhite-turkey-cheese-wrap', 4, 'sandwich', 'https://cbsnews1.cbsistatic.com/hub/i/r/2011/02/23/e41aa6ac-a642-11e2-a3f0-029118418759/resize/620x465/374d2f5b06945c50033a78f50d69ac37/dunkindonuts_wrap.jpg');
+    ('eggwhite-turkey-cheese-wrap', 4, 'sandwich', 'https://cbsnews1.cbsistatic.com/hub/i/r/2011/02/23/e41aa6ac-a642-11e2-a3f0-029118418759/resize/620x465/374d2f5b06945c50033a78f50d69ac37/dunkindonuts_wrap.jpg'),
+    ('Card-25', 25, 'card', 'https://marketingcdn.giftcardgranny.com/merchant-images/lg/dunkin-donuts-gift-card.png'),
+    ('Cart-50', 50, 'card', 'https://cdn11.bigcommerce.com/s-phjrc3z910/images/stencil/1280x1280/products/9480/14114/DD-Gift-Card-MayG-2__26944.1530553440.jpg?c=2'),
+    ('DONUTS-FOR-LIFE', 300000, 'card', 'https://convenientmd.com/wp-content/uploads/2016/06/dunkindonuts.jpg');
 
 CREATE TABLE purchase_history
 (

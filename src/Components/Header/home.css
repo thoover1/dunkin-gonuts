@@ -4,8 +4,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: rgba(0, 0, 0, 0.13);
 }
 
@@ -34,7 +34,7 @@
   top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: rgba(247, 65, 141, 0.801);
   color: white;
   font-size: 50px;
@@ -82,7 +82,7 @@
   top: 20%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: rgba(247, 65, 141, 0.801);
   color: white;
   font-size: 50px;
@@ -103,7 +103,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 60%;
   left: 10%;
 }
@@ -118,7 +118,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 60%;
   left: 10%;
   background: transparent;
@@ -134,7 +134,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 40%;
   left: 10%;
 }
@@ -149,7 +149,7 @@
   position: absolute;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   top: 40%;
   left: 10%;
   background: transparent;
@@ -159,12 +159,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 60px;
     -webkit-transform: translate(-30%, -50%);
-    transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 80px;
     -webkit-transform: translate(-32%, -50%);
-    transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
   }
 }
 
@@ -172,12 +172,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 45px;
     -webkit-transform: translate(-30%, -50%);
-    transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 60px;
     -webkit-transform: translate(-32%, -50%);
-    transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
   }
 }
 
@@ -207,12 +207,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 30px;
     -webkit-transform: translate(-30%, -50%);
-    transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 40px;
     -webkit-transform: translate(-32%, -50%);
-    transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
   }
 }
 
@@ -242,12 +242,12 @@
   .mobileApp-section .mobileApple-btn img {
     height: 20px;
     -webkit-transform: translate(-30%, -50%);
-    transform: translate(-30%, -50%);
+            transform: translate(-30%, -50%);
   }
   .mobileApp-section .mobileGoogle-btn img {
     height: 26px;
     -webkit-transform: translate(-32%, -50%);
-    transform: translate(-32%, -50%);
+            transform: translate(-32%, -50%);
   }
 }
 

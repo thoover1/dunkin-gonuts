@@ -1,3 +1,3 @@
 SELECT *
 FROM inventory
-WHERE category = card;
+WHERE category = 'card';
