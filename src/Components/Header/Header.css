@@ -41,8 +41,12 @@ img {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 28px;
   color: orange;
+}
+
+.links:hover {
+  color: rgba(247, 65, 141, 0.966);
 }
 
 .fas.fa-chevron-down.fa-xs {
@@ -54,8 +58,16 @@ i {
   color: orange;
 }
 
+i:hover {
+  color: rgba(247, 65, 141, 0.966);
+}
+
 .hamburger-button {
   display: none;
+}
+
+.hamburger-button:hover {
+  color: orange;
 }
 
 @media (max-width: 1025px) {

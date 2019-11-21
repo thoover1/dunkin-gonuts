@@ -23,7 +23,7 @@ export default class Header extends React.Component {
             </Link>
             <Link className="links" to="/buy">
               MENU
-              <i className="fas fa-chevron-down fa-xs"></i>
+              {/* <i className="fas fa-chevron-down fa-xs"></i> */}
             </Link>
             <Link className="links" to="/cart">
               <i className="fas fa-shopping-cart" samesite="none"></i>

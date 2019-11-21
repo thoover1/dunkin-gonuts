@@ -52,4 +52,10 @@
     font-size: 15px;
   }
 }
+
+@media (max-width: 550px) {
+  .sideDrawer-link-wrap {
+    padding-right: 35px;
+  }
+}
 /*# sourceMappingURL=SideDrawer.css.map */

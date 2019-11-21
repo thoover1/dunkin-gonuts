@@ -30,8 +30,11 @@ img {
   display: flex;
   justify-content: space-around;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 28px;
   color: $primaryColor;
+}
+.links:hover {
+  color: rgba(247, 65, 141, 0.966);
 }
 
 .fas.fa-chevron-down.fa-xs {
@@ -43,8 +46,15 @@ i {
   color: $primaryColor;
 }
 
+i:hover {
+  color: rgba(247, 65, 141, 0.966);
+}
+
 .hamburger-button {
   display: none;
+}
+.hamburger-button:hover {
+  color: orange;
 }
 
 @media (max-width: 1025px) {
@@ -73,6 +83,7 @@ i {
     margin-top: -30px;
     z-index: 3;
     cursor: pointer;
+    // transition: all 1s ease-in-out;
   }
   .hamburger-button:focus {
     outline: none;

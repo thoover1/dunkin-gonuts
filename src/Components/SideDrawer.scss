@@ -9,6 +9,9 @@
   justify-content: space-around;
   font-size: 30px;
   opacity: 97%;
+  // transform: translate(-5%, -10%);
+  // transition: all 2s ease-in-out;
+
   .sideDrawer-links {
     text-decoration: none;
     color: orange;
@@ -39,5 +42,10 @@
     flex-direction: column;
     align-items: flex-end;
     font-size: 15px;
+  }
+}
+@media (max-width: 550px) {
+  .sideDrawer-link-wrap {
+    padding-right: 35px;
   }
 }
