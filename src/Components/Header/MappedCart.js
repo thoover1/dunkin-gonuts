@@ -65,7 +65,8 @@ export default class Product extends Component {
                 </form>
               </div>
               <div className="cart-total">
-                Total = {this.props.newCart.quantity * this.props.newCart.price}
+                Total = ${" "}
+                {this.props.newCart.quantity * this.props.newCart.price}
               </div>
             </div>
           </ul>

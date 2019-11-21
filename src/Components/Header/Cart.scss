@@ -8,15 +8,15 @@
     height: 100%;
     // border: groove;
     // border-color: red;
-    // padding-left: 100px;
+    padding-left: 100px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     .cart {
       height: 100%;
-      width: 100%;
-      padding: 20px;
+      width: 70vw;
+      padding: 10px;
       // border: dashed;
       // border-color: blue;
       display: flex;
@@ -26,7 +26,7 @@
         padding: 10px;
         // border: dashed;
         // border-color: green;
-        // display: flex;
+        display: flex;
         .cart-list-a {
           height: 100%;
           width: 100%;
@@ -36,15 +36,15 @@
           justify-content: center;
           align-items: center;
           .delete-button {
-            height: 48%;
-            width: 15%;
+            height: 45px;
+            width: 100px;
             border-radius: 5px;
             color: white;
             background-color: red;
           }
           .cart-img-name-price {
-            width: 40%;
-            // height: 100%;
+            width: 20%;
+            height: 100%;
             // border: dashed;
             // border-color: black;
             img {
@@ -53,24 +53,23 @@
             }
           }
           .cart-quantity {
-            width: 20%;
+            width: 10%;
             // border: dashed;
             // border-color: orange;
           }
           .cart-options {
-            border: dashed;
-            border-color: red;
+            width: 20%;
+            // border: dashed;
+            // border-color: red;
             .cart-form {
               .cart-input {
-                // display: flex;
-                // flex-wrap: nowrap;
-                // align-items: center;
-                width: 50%;
+                width: 30%;
               }
             }
           }
           .cart-total {
-            width: 30%;
+            width: 15%;
+            display: flex;
             // border: groove;
             // border-color: greenyellow;
           }

@@ -7,6 +7,7 @@
 .cart-container .mapped-cart {
   width: 80vw;
   height: 100%;
+  padding-left: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,8 +24,8 @@
 
 .cart-container .mapped-cart .cart {
   height: 100%;
-  width: 100%;
-  padding: 20px;
+  width: 70vw;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,6 +35,9 @@
   height: 100%;
   width: 100%;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a {
@@ -51,15 +55,16 @@
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .delete-button {
-  height: 48%;
-  width: 15%;
+  height: 45px;
+  width: 100px;
   border-radius: 5px;
   color: white;
   background-color: red;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-img-name-price {
-  width: 40%;
+  width: 20%;
+  height: 100%;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-img-name-price img {
@@ -68,19 +73,21 @@
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-quantity {
-  width: 20%;
+  width: 10%;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-options {
-  border: dashed;
-  border-color: red;
+  width: 20%;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-options .cart-form .cart-input {
-  width: 50%;
+  width: 30%;
 }
 
 .cart-container .mapped-cart .cart .cart-list .cart-list-a .cart-total {
-  width: 30%;
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=Cart.css.map */

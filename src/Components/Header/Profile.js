@@ -3,27 +3,31 @@ import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../reducer";
+import "./Profile.scss";
 
 class Profile extends Component {
   render() {
-    const { lastName, firstName } = this.props;
     return (
-      <div>
-        <h1>This is your Profile!</h1>
-        <h3>
-          {lastName}, {firstName}
-        </h3>
-        <Link to="/auth/login">
-          <button
-            onClick={() => {
-              axios.delete("/auth/logout").then(() => {
-                this.props.setUser(null);
-              });
-            }}
-          >
-            Logout
-          </button>
-        </Link>
+      <div className="profile-container">
+        <div>
+          <h1>Successfully logged in!</h1>
+        </div>
+        <div>
+          <h3>Go Nuts!</h3>
+        </div>
+        <div>
+          <Link to="/auth/login">
+            <button
+              onClick={() => {
+                axios.delete("/auth/logout").then(() => {
+                  this.props.setUser(null);
+                });
+              }}
+            >
+              Logout
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }

@@ -14,45 +14,47 @@ export default class Footer extends Component {
         </div>
         <div className="follow-us">
           <h3>FOLLOW US</h3>
-          <div>
-            <a
-              href="https://twitter.com/dunkindonuts?lang=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/DunkinUS/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="https://www.pinterest.com/DunkinDonuts/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-pinterest-square"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/dunkin/?hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.youtube.com/user/dunkindonuts#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-youtube"></i>
-            </a>
+          <div className="media-icons">
+            <div className="media-icons-a">
+              <a
+                href="https://twitter.com/dunkindonuts?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/DunkinUS/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.pinterest.com/DunkinDonuts/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-pinterest-square"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/dunkin/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/user/dunkindonuts#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div>
+        <div className="enter-form">
           <h3>ENTER TO WIN BIG!!!!!</h3>
           <form>
             <input name="enter_phone" placeholder="Phone Number Here"></input>

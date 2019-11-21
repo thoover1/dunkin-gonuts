@@ -364,7 +364,8 @@
 
 @media (max-width: 650px) {
   .buy-container {
-    padding: 0;
+    padding-top: 5px;
+    padding-right: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -372,12 +373,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
   .box .inventory {
     width: 56vw;
