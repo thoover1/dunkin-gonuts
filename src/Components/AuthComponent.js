@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { setUser } from "../reducer";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import "./AuthComponent.scss";
 
 class AuthComponent extends Component {
   constructor(props) {
@@ -47,93 +48,107 @@ class AuthComponent extends Component {
     ) : (
       <div className="auth-container">
         <h1>You must login before accessing the menu or your cart</h1>
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            if (register) {
-              this.register();
-            } else {
-              this.login();
-            }
-          }}
-        >
-          {/* shortcircuit to use not have username when logging in to already created account */}
+        <div className="sabertooth">
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              if (register) {
+                this.register();
+              } else {
+                this.login();
+              }
+            }}
+          >
+            {/* shortcircuit to use not have username when logging in to already created account */}
 
-          {register && (
+            {register && (
+              <div className="input-container">
+                {/* <label>username</label> */}
+                <input
+                  value={username}
+                  placeholder="Username"
+                  onChange={e =>
+                    this.setState({
+                      username: e.target.value
+                    })
+                  }
+                />
+              </div>
+            )}
             <div className="input-container">
-              <label>username</label>
+              {/* <label>email</label> */}
               <input
-                value={username}
+                type="email"
+                placeholder="Email"
+                value={email}
                 onChange={e =>
                   this.setState({
-                    username: e.target.value
+                    email: e.target.value
                   })
                 }
               />
             </div>
-          )}
-          <div className="input-container">
-            <label>email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={e =>
-                this.setState({
-                  email: e.target.value
-                })
-              }
-            />
-          </div>
-          <div className="input-container">
-            <label>password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={e =>
-                this.setState({
-                  password: e.target.value
-                })
-              }
-            />
-          </div>
-          {register && (
             <div className="input-container">
-              <label>Phone Number</label>
+              {/* <label>password</label> */}
               <input
-                type="phone-number"
-                value={phone_number}
+                type="password"
+                placeholder="Password"
+                value={password}
                 onChange={e =>
                   this.setState({
-                    phone_number: e.target.value
+                    password: e.target.value
                   })
                 }
               />
             </div>
-          )}
-          <button>{register ? "Register" : "Login"}</button>
-        </form>
-        {!register && (
-          <button
-            onClick={() =>
-              this.setState({
-                register: true
-              })
-            }
-          >
-            Go To Register
-          </button>
-        )}
-        {register && (
-          <button
-            onClick={() =>
-              this.setState({
-                register: false
-              })
-            }
-          >
-            Go To Login
-          </button>
-        )}
+            {register && (
+              <div className="input-container">
+                {/* <label>Phone Number</label> */}
+                <input
+                  type="phone-number"
+                  placeholder="Phone Number"
+                  value={phone_number}
+                  onChange={e =>
+                    this.setState({
+                      phone_number: e.target.value
+                    })
+                  }
+                />
+              </div>
+            )}
+            <div className="hmmmm">
+              <button className="go-to-but">
+                {register ? "Register" : "Login"}
+              </button>
+            </div>
+          </form>
+          <div className="maximum-effort">
+            {!register && (
+              <button
+                className="go-to-but"
+                onClick={() =>
+                  this.setState({
+                    register: true
+                  })
+                }
+              >
+                Go To Register
+              </button>
+            )}
+            {register && (
+              <button
+                className="go-to-but"
+                onClick={() =>
+                  this.setState({
+                    register: false
+                  })
+                }
+              >
+                Sign In
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     );
   }

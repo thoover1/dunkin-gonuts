@@ -1,0 +1,49 @@
+.auth-container {
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sabertooth {
+  height: 400px;
+  width: 325px;
+  padding-top: 30px;
+  border: solid;
+  border-color: #ff00b3;
+  border-radius: 15px;
+  border-width: 7px;
+}
+
+.input-container {
+  height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hmmmm {
+  padding-bottom: 8px;
+}
+
+.go-to-but {
+  width: 196px;
+  color: white;
+  background-color: #ff00b3;
+}
+/*# sourceMappingURL=AuthComponent.css.map */
