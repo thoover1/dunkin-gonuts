@@ -132,7 +132,7 @@ class AuthComponent extends Component {
                   })
                 }
               >
-                Go To Register
+                Register
               </button>
             )}
             {register && (
@@ -144,7 +144,7 @@ class AuthComponent extends Component {
                   })
                 }
               >
-                Sign In
+                Existing Account?
               </button>
             )}
           </div>

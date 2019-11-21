@@ -42,12 +42,13 @@ export default class Home extends Component {
   render() {
     return (
       <div className="map-container">
-        <br />
-        <br />
         <h1>LOCATIONS NEAR YOU</h1>
         <br />
+        <h1>(coming soon!)</h1>
         <br />
         <br />
+        <br />
+        <h1>Current Location:</h1>
         <br />
         <MapComponent currentLocation={this.state.currentLatLng} />
       </div>

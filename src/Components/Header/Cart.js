@@ -79,16 +79,23 @@ class Cart extends Component {
   }
 
   render() {
+    const emptyCartStyle = {
+      height: "60vh"
+    };
     const mappedCart = this.state.cart.sort((a, b) => a.cart_id - b.cart_id);
     if (this.props.user === null) {
       return <Redirect to="/auth/login" />;
     } else if (!mappedCart.length) {
-      return <div className="empty-cart">Your cart is empty</div>;
+      return (
+        <div className="empty-cart" style={emptyCartStyle}>
+          Your cart is empty
+        </div>
+      );
     }
 
     return (
       <div className="cart-container">
-        <h1>Cart</h1>
+        <h1>My Cart</h1>
         <ScrollingCart wipeCart={this.wipeCart} cart={this.state.cart} />
         <div className="mapped-cart">
           {mappedCart.map(newCart => {

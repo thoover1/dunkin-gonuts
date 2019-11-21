@@ -3,12 +3,16 @@
   // height: 100%;
   width: 100vw;
   background: rgb(250, 250, 250);
+  h1 {
+    font-size: 40px;
+    color: rgb(255, 0, 179);
+  }
   .mapped-cart {
     width: 80vw;
     height: 100%;
     // border: groove;
     // border-color: red;
-    padding-left: 100px;
+    padding-left: 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
