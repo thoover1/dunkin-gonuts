@@ -34,8 +34,6 @@ app.use(
 );
 // used for stripe checkout sending info
 app.post("/checkout", async (req, res) => {
-  console.log("Request:", req.body);
-
   let error;
   let status;
   try {
@@ -69,10 +67,10 @@ app.post("/checkout", async (req, res) => {
         idempotency_key
       }
     );
-    console.log("Charge:", { charge });
+    // console.log("Charge:", { charge });
     status = "success";
   } catch (error) {
-    console.error("Error:", error);
+    // console.error("Error:", error);
     status = "failure";
   }
 
@@ -90,7 +88,7 @@ app.post("/auth/login", uc.login);
 app.get("/auth/userSession", uc.userSession);
 app.delete("/auth/logout", uc.logout);
 
-// only allows users with profile to use app - psuedo-middleware ;)
+// only allows users with profile to use app - psuedo-middleware
 app.use((req, res, next) => {
   if (req.session.user) return next();
   else res.sendStatus(401);

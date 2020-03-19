@@ -25,7 +25,6 @@ export default class Home extends Component {
   getGeoLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        console.log(position.coords);
         this.setState(prevState => ({
           currentLatLng: {
             ...prevState.currentLatLng,

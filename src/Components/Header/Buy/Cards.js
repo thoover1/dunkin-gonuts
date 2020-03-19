@@ -35,7 +35,6 @@ class Cards extends Component {
         });
       })
       .catch(err => console.log(err));
-    console.log(this.state.cardInventory);
   }
 
   iconAddToCart(product_id) {

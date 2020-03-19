@@ -159,6 +159,10 @@
   color: #ff00b3;
 }
 
+.box .inventory .product .product-list .product-info .product-cart-options i:active {
+  color: orange;
+}
+
 .box .inventory .product .product-list .product-info .product-cart-options form {
   width: 80%;
 }

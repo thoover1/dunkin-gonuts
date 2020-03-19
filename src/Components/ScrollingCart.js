@@ -46,7 +46,7 @@ export default class ScrollingCart extends PureComponent {
             <h5>CART</h5>
             <h6>Price: $ {prices}</h6>
             <h6>Tax: $ {prices * 0.08}</h6>
-            <h6>Total: $ {prices + prices * 0.08}</h6>
+            <h6>Total: $ {(prices + prices * 0.08).toFixed(2)}</h6>
             <StripeCheckout
               stripeKey="pk_test_ANIANWG25Tgt2fvXFcMOF1Ey00NI3Ls157"
               token={handleToken}
