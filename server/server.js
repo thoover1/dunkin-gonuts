@@ -142,10 +142,10 @@ app.delete("/api/after_purchase_wipe_cart/:user_id/", cc.afterPurchaseWipeCart);
 // })();
 // debugger;
 
-// const path = require("path");
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../build/index.html"));
-// });
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(SERVER_PORT, () => {
   console.log(`Server running on port ${SERVER_PORT}`);
